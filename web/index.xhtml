@@ -110,12 +110,14 @@
                                 <ul>
                                     <!-- <li class="active"><a href="index.html">Home</a></li> -->
 
-                                    <li><a href="work.html">Work</a></li>
 
-                                    <li><a href="about.html">About</a></li>
+                                    <!-- behavior: 'smooth' opcija pri scrollIntoView ne dela pri safari-iphone, ampak vrže direkt, ne scrolla... -->
+                                    <li><a onClick="document.getElementById('HIW').scrollIntoView({ block: 'start',  behavior: 'smooth' });">how it works</a></li>
+
+                                    <li><a onClick="document.getElementById('OLW').scrollIntoView({ block: 'start',  behavior: 'smooth' });">Our Latest Work</a></li>
 
                                     <li class="has-dropdown">
-                                        <a href="services.html">Services</a>
+                                        <a onClick="document.getElementById('HC').scrollIntoView({ block: 'start',  behavior: 'smooth' });">Happy Clients (drop down)</a>
 
                                         <ul class="dropdown">
 
@@ -169,7 +171,7 @@
 
                     <div class="row animate-box">
 
-                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <div id="HIW" class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 
                             <h2>How it Works</h2>
 
@@ -241,7 +243,7 @@
 
                     <div class="row animate-box">
 
-                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <div id="OLW" class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 
                             <h2>Our Latest Work</h2>
 
@@ -304,7 +306,7 @@
 
                     <div class="row animate-box">
 
-                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <div id="HC" class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 
                             <h2>Happy Clients</h2>
                         </div>
