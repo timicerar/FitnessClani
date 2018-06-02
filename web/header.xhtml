@@ -66,9 +66,8 @@
 </h:head>
 <f:view>
     <body>
-    <div class="fh5co-loader" />
     <div id="page">
-        <nav class="fh5co-nav" role="navigation">
+        <nav style="float: right;" class="fh5co-nav" role="navigation">
             <div class="top">
                 <div class="container">
                     <div class="row">
@@ -95,7 +94,7 @@
                             <ul>
                                 <!-- <li class="active"><a href="index.html">Home</a></li> -->
                                 <li><a href="programi.xhtml">Work</a></li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a href="dan.xhtml">About</a></li>
                                 <li class="has-dropdown">
                                     <a href="services.html">Services</a>
                                     <ul class="dropdown">
@@ -134,7 +133,7 @@
                             </div>
                             <!-- ZADNJE TELO IN DELI TELESA -->
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                <p id="demo1" ><img src="images/Telo_zadaj.png"  alt="teloZadaj" usemap="#teloZadaj"/></p>
+                                <p id="zadaj" ><img src="images/zadaj.png"  alt="teloZadaj" usemap="#teloZadaj"/></p>
                                 <map name="teloZadaj">
                                     <area shape="poly" coords="176,88,193,106,207,151,220,194,230,222,247,256,243,271,239,276,225,266,215,227,190,186,185,163,177,145,180,112,180,102" alt="desnaRoka" href="https://www.w3schools.com/html/" onmousemove="rokeZadaj(event)" onmouseout="pocistiZadaj()"/>
                                     <area shape="poly" coords="132,284,160,290,180,279,185,339,188,371,196,401,197,432,198,457,199,463,209,458,218,468,190,483,182,481,180,456,170,428,166,409,163,376,152,352,136,299" alt="desnaNoga" href="https://www.w3schools.com/html/"  onmousemove="nogeZadaj(event)" onmouseout="pocistiZadaj()"/>
@@ -152,6 +151,8 @@
 </div>
     <!-- Sprednji del telesa -->
     <script src="js/sprednjiDelTelesa.js"></script>
+    <!-- Zadnji del telesa -->
+    <script src="js/zadnjiDelTelesa.js"></script>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <!-- jQuery Easing -->
