@@ -9,8 +9,5 @@
         <module name="FitnessClani" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="FitnessClani" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
