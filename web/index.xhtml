@@ -6,267 +6,172 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core" xml:lang="en" lang="en">
 <h:head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>Fitness</title>
 
-    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="FitnessUsers" />
+    <meta name="author" content="Praktikum" />
 
-    <meta name="author" content=""/>
-
-    <title>Stylish Portfolio - Start Bootstrap Template</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-          rel="stylesheet" type="text/css"/>
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"/>
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet"/>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/full-slider.css" rel="stylesheet" />
 </h:head>
-<f:view>
-<body id="page-top">
-
-<!-- Navigation -->
-<a class="menu-toggle rounded" href="#">
-    <i class="fa fa-bars"/></a>
-<nav id="sidebar-wrapper">
-
-    <ul class="sidebar-nav">
-
-        <li class="sidebar-brand">
-            <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-        </li>
-
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#page-top">Home</a>
-        </li>
-
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#about">About</a>
-        </li>
-
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#services">Services</a>
-        </li>
-
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-        </li>
-
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#contact">Contact</a>
-        </li>
-    </ul>
-</nav>
-<!-- Header -->
-<header class="masthead d-flex">
-
-    <div class="container text-center my-auto">
-
-        <h1 class="mb-1">Stylish Portfolio</h1>
-
-        <h3 class="mb-5">
-            <em>A Free Bootstrap Theme by Start Bootstrap</em>
-        </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-    </div>
-
-    <div class="overlay"/>
-</header>
-<!-- About -->
-<section class="content-section bg-light" id="about">
-
-    <div class="container text-center">
-
-        <div class="row">
-
-            <div class="col-lg-10 mx-auto">
-
-                <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-
-                <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-                    <a href="https://unsplash.com/">Unsplash</a>!</p>
-                <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+<h:body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="icon/dumbbell-32.png"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#domov">Domov
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#predstavitev">Predstavitev</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</section>
-<!-- Services -->
-<section class="content-section bg-primary text-white text-center" id="services">
+    </nav>
 
-                    <!-- SPREDNJE TELO IN DELI TELESA -->
-                    <div class="display-tc animate-box" data-animate-effect="fadeIn" align="left">
-                        <p id="demo" ><img src="images/spredaj.png"  alt="teloSpredaj" usemap="#teloSpredaj"/></p>
-                        <map name="teloSpredaj">
-                            <area shape="poly" coords="70,90,80,87,88,87,84,98,81,106,74,144,63,170,57,190,38,224,24,272,13,278,7,272,4,259,9,240,22,222,35,172,45,153,55,115,63,94" alt="desnaRoka" href="https://www.w3schools.com/html/" onmousemove="roke(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="86,209,99,227,110,255,118,284,86,380,82,415,70,449,69,477,30,500,24,488,51,461,55,410,61,377,67,346,66,308,73,249" alt="desnaNoga" href="https://www.w3schools.com/html/"  onmousemove="noge(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="94,87,125,91,157,87,172,136,152,145,127,143,105,146,79,137,85,110" alt="prsa" href="https://www.w3schools.com/html/" onmousemove="prsa(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="78,143,100,150,126,149,152,151,172,144,163,180,163,202,143,231,129,280,122,281,113,245,102,221,87,205,86,179" alt="trebuh" href="https://www.w3schools.com/html/" onmousemove="trebuh(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="163,87,187,96,196,116,206,155,216,177,226,215,246,256,243,273,236,278,224,264,215,231,195,193,183,161,176,147,174,118" alt="levaRoka" href="https://www.w3schools.com/html/" onmousemove="roke(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="165,209,182,280,185,336,201,455,227,486,223,499,186,479,181,455,167,411,163,382,131,285,144,240,154,222" alt="levaNoga" href="https://www.w3schools.com/html/" onmousemove="noge(event)" onmouseout="pocisti()"/>
-                        </map>
+    <header id="domov">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One -->
+                <div class="carousel-item active" style="background-image: url('images/slider/fitness-3.png')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="h3-text-border">First Slide</h3>
+                        <p>This is a description for the first slide.</p>
                     </div>
-
-                    <!-- ZADNJE TELO IN DELI TELESA -->
-                    <div class="display-tc animate-box" data-animate-effect="fadeIn" align="right">
-                        <p id="zadaj" ><img src="images/zadaj.png"  alt="teloZadaj" usemap="#teloZadaj"/></p>
-                        <map name="teloZadaj">
-                            <area shape="poly" coords="176,88,193,106,207,151,220,194,230,222,247,256,243,271,239,276,225,266,215,227,190,186,185,163,177,145,180,112,180,102" alt="desnaRoka" href="https://www.w3schools.com/html/" onmousemove="rokeZadaj(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="132,284,160,290,180,279,185,339,188,371,196,401,197,432,198,457,199,463,209,458,218,468,190,483,182,481,180,456,170,428,166,409,163,376,152,352,136,299" alt="desnaNoga" href="https://www.w3schools.com/html/"  onmousemove="nogeZadaj(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="80,86,93,87,123,74,154,84,169,87,177,105,163,177,162,190,127,228,125,229,91,191,84,171,78,148,73,108,76,98" alt="hrbet" href="https://www.w3schools.com/html/" onmousemove="hrbet(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="87,198,97,213,112,227,125,237,139,225,146,216,158,205,161,199,168,217,175,246,179,265,174,276,163,283,148,282,124,279,106,283,93,284,83,284,71,275,69,268,73,241" alt="rit" href="https://www.w3schools.com/html/" onmousemove="rit(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="75,87,70,104,71,124,74,144,61,177,46,205,36,229,29,258,14,276,8,272,6,258,3,257,8,240,20,227,31,190,39,163,45,157,47,133,54,117,60,98,68,90" alt="levaRoka" href="https://www.w3schools.com/html/" onmousemove="rokeZadaj(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="69,281,79,291,89,291,118,284,85,379,83,413,73,445,68,470,68,481,57,484,31,472,31,461,37,457,49,463,52,425,54,402,60,371,64,341,64,314,67,296" alt="levaNoga" href="https://www.w3schools.com/html/" onmousemove="nogeZadaj(event)" onmouseout="pocistiZadaj()"/>
-                        </map>
+                </div>
+                <!-- Slide Two -->
+                <div class="carousel-item" style="background-image: url('images/slider/fitness-1.png')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="h3-text-border">Second Slide</h3>
+                        <p>This is a description for the second slide.</p>
                     </div>
-
-
-</section>
-<!-- Callout -->
-<section class="callout">
-
-    <div class="container text-center">
-
-        <h2 class="mx-auto mb-5">Welcome to
-            <em>your</em>
-            next website!</h2>
-        <a class="btn btn-primary btn-xl"
-           href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
-    </div>
-</section>
-<!-- Portfolio -->
-<section class="content-section" id="portfolio">
-
-    <div class="container">
-
-        <div class="content-section-heading text-center">
-
-            <h3 class="text-secondary mb-0">Portfolio</h3>
-
-            <h2 class="mb-5">Recent Projects</h2>
+                </div>
+                <!-- Slide Three -->
+                <div class="carousel-item" style="background-image: url('images/slider/fitness-2.png')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="h3-text-border">Third Slide</h3>
+                        <p>This is a description for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+    </header>
 
-        <div class="row no-gutters">
-
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-
-<h2>Stationary</h2>
-
-<p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
-                </span>
-              </span>
-                    <img class="img-fluid" src="img/portfolio-1.jpg" alt=""/>
-                </a>
-            </div>
-
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-
-<h2>Ice Cream</h2>
-
-<p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                </span>
-              </span>
-                    <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
-                </a>
-            </div>
-
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-
-<h2>Strawberries</h2>
-
-<p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                </span>
-              </span>
-                    <img class="img-fluid" src="img/portfolio-3.jpg" alt=""/>
-                </a>
-            </div>
-
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-
-<h2>Workspace</h2>
-
-<p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                </span>
-              </span>
-                    <img class="img-fluid" src="img/portfolio-4.jpg" alt=""/>
-                </a>
+    <!-- Predstavitev -->
+    <section id="predstavitev" class="py-lg-5">
+        <div class="container">
+            <div>
+                <h1 align="center" class="h1-text-border">Predstavitev</h1>
+                <hr />
+                <p style="text-align: justify;">It is a long established fact that a reader will be distracted by the readable content
+                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                    more-or-less normal distribution of letters, as opposed to using 'Content here,
+                    content here', making it look like readable English. Many desktop publishing
+                    packages and web page editors now use Lorem Ipsum as their default model text,
+                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                    Various versions have evolved over the years, sometimes by accident, sometimes on
+                    purpose (injected humour and the like).</p>
             </div>
         </div>
-    </div>
-</section>
-<!-- Call to Action -->
-<section class="content-section bg-primary text-white">
+    </section>
 
-    <div class="container text-center">
+    <!-- Telo (Spredaj in zadaj) -->
+    <section id="telo" class="py-lg-5 bg-secondary">
+        <div class="container">
+            <h1 align="center" class="h1-text-border">Izberite del telesa</h1>
+            <div align="center">
+                <!-- tukaj pride telo -->
+                <button class="btn btn-outline-info text-light" style="width: 20%;" type="button">Obrni telo</button>
+            </div>
+        </div>
+    </section>
 
-        <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-        <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
-    </div>
-</section>
-<!-- Map -->
-<section id="contact" class="map">
-    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-            src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"/>
-    <br/>
-    <small>
-        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"/>
-    </small>
-</section>
-<!-- Footer -->
-<footer class="footer text-center">
+    <!-- Programi -->
+    <section id="programi" class="py-lg-5">
+        <div class="container">
+            <h1 align="center" class="h1-text-border">Programi Fitnessa</h1>
+            <hr/>
+        </div>
+    </section>
 
-    <div class="container">
+    <!-- Zemljevid fitnesov -->
+    <section id="map" style="height: 400px;">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+    </section>
 
-        <ul class="list-inline mb-5">
+    <!-- Kontak -->
+    <section id="kontakt" class="py-lg-5">
+        <div class="container">
+            <h1 align="center" class="h1-text-border">Kontakt</h1>
+            <hr/>
 
-            <li class="list-inline-item">
-                <a class="social-link rounded-circle text-white mr-3" href="#">
-                    <i class="icon-social-facebook"/>
-                </a>
-            </li>
+        </div>
+    </section>
 
-            <li class="list-inline-item">
-                <a class="social-link rounded-circle text-white mr-3" href="#">
-                    <i class="icon-social-twitter"/>
-                </a>
-            </li>
+    <!-- Footer -->
+    <footer class="py-5 bg-secondary">
+        <div class="container">
+            <p class="m-0 text-center text-light">
+                Copyright <span style="color: #FF851B;">©</span> Praktikum 2
+            </p>
+        </div>
+    </footer>
 
-            <li class="list-inline-item">
-                <a class="social-link rounded-circle text-white" href="#">
-                    <i class="icon-social-github"/>
-                </a>
-            </li>
-        </ul>
+    <script type="text/javascript">
+        function roke(e) {
+            document.getElementById("demo").innerHTML = '&lt;img src="fitness-body-img/spredajRoke.png"  alt="teloSpredaj" usemap="#teloSpredaj" />';
+        }
 
-        <p class="text-muted small mb-0">Copyright © Your Website 2017</p>
-    </div>
-</footer>
-<!-- Scroll to Top Button--><a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-    <i class="fa fa-angle-up"/></a>
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-<!-- Custom scripts for this template -->
-<script src="js/stylish-portfolio.min.js"></script>
-<!-- Sprednji del telesa -->
-<script src="js/sprednjiDelTelesa.js"></script>
-<!-- Zadnji del telesa -->
-<script src="js/zadnjiDelTelesa.js"></script>
-</body>
-</f:view>
+        function noge(e) {
+            document.getElementById("demo").innerHTML = '&lt;img src="fitness-body-img/spredajNoge.png"  alt="teloSpredaj" usemap="#teloSpredaj">';
+        }
+
+        function prsa(e) {
+            document.getElementById("demo").innerHTML = '&lt;img src="fitness-body-img/spredajPrsa.png"  alt="teloSpredaj" usemap="#teloSpredaj">';
+        }
+
+        function trebuh(e) {
+            document.getElementById("demo").innerHTML = '&lt;img src="fitness-body-img/spredajTrebuh.png"  alt="teloSpredaj" usemap="#teloSpredaj">';
+        }
+
+        function pocisti() {
+            document.getElementById("demo").innerHTML = '&lt;img src="fitness-body-img/spredaj.png"  alt="teloSpredaj" usemap="#teloSpredaj">';
+        }
+    </script>
+
+    <!-- Telo JavaScript -->
+    <script src="js/sprednjiDelTelesa.js" type="text/javascript"></script>
+    <script src="js/zadnjiDelTelesa.js" type="text/javascript"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+</h:body>
 </html>
