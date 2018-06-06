@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core" xml:lang="en" lang="en">
 <h:head>
@@ -65,21 +65,21 @@
                 <div class="carousel-item active" style="background-image: url('images/slider/fitness-3.png')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="h3-text-border">Peter Maher, maratonec</h3>
-                        <p>“Tek je velik vprašaj, ki se pojavi vsak dan. Vpraša te: Ali boš danes mlahav ali boš močan?”</p>
+                        <p class="lead">“Tek je velik vprašaj, ki se pojavi vsak dan. Vpraša te: Ali boš danes mlahav ali boš močan?”</p>
                     </div>
                 </div>
                 <!-- Slide Two -->
                 <div class="carousel-item" style="background-image: url('images/slider/fitness-1.png')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="h3-text-border">Brooks Johnson, trener sprinterjev</h3>
-                        <p>“Hitrost res ubija. Pri daljših razdal­jah ubija tiste, ki je nimajo.”</p>
+                        <p class="lead">“Hitrost res ubija. Pri daljših razdal­jah ubija tiste, ki je nimajo.”</p>
                     </div>
                 </div>
                 <!-- Slide Three -->
                 <div class="carousel-item" style="background-image: url('images/slider/fitness-2.png')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="h3-text-border">Tom DuBos, tekač</h3>
-                        <p>“Če trenirate premalo, tvegate, da ne boste zmogli do cilja, če preveč, da ne boste zmogli do starta.”</p>
+                        <p class="lead">“Če trenirate premalo, tvegate, da ne boste zmogli do cilja, če preveč, da ne boste zmogli do starta.”</p>
                     </div>
                 </div>
             </div>
@@ -102,29 +102,29 @@
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="service-box">
                             <i class="fas fa-3x fa-info-circle color-icon" style="margin-bottom: 5px;"/>
-                            <h3 class="text-custom">Kaj je Fitness?</h3>
-                            <p>Spletni portal Fitness vam pomaga nadzorovati vašo vadbo tako, da upravljate fitnes programe in imate popolen nadzor nad njimi.</p>
+                            <h3 class="h3-text-border text-custom">Kaj je Fitness?</h3>
+                            <p class="lead">Spletni portal Fitness vam pomaga nadzorovati vašo vadbo tako, da upravljate fitnes programe in imate popolen nadzor nad njimi.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="service-box">
                             <i class="fas fa-3x fa-thumbs-up color-icon" style="margin-bottom: 5px;" />
-                            <h3 class="text-custom">Zakaj izbrati ravno nas?</h3>
-                            <p>Ker spletni portal Fitness ustvarja skupina profesionalnih športnikov, ki zelo dobro vedo kaj je pri spremljnaju vadbe ali fitnes programa pomembno.</p>
+                            <h3 class="h3-text-border text-custom">Zakaj izbrati ravno nas?</h3>
+                            <p class="lead">Ker spletni portal Fitness ustvarja skupina profesionalnih športnikov, ki zelo dobro vedo kaj je pri spremljnaju vadbe ali fitnes programa pomembno.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="service-box">
                             <i class="fas fa-3x fa-newspaper-o color-icon" style="margin-bottom: 5px;" />
-                            <h3 class="text-custom">Ponujamo:</h3>
-                            <p>- Spremljanje vadb <br/>- Pomoč pri načtrovanju vadb <br/>- Spremljanje napredka <br/>- Fitnes programe</p>
+                            <h3 class="h3-text-border text-custom">Ponujamo:</h3>
+                            <p class="lead">- Spremljanje vadb <br/>- Pomoč pri načtrovanju vadb <br/>- Spremljanje napredka <br/>- Fitnes programe</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="service-box">
                             <i class="fas fa-3x fa-smile-o color-icon" style="margin-bottom: 5px;" />
-                            <h3 class="text-custom">Zanimivosti:</h3>
-                            <p>Fitness uporabljajo številni znani športniki, kot so: <br/>- Tina Maze <br/>- Ilka Štuhec <br/>- Peter Prevc <br/>- Vasilij Žbogar <br/>- Tina Trstenjak<br/>ter mnogi drugi.</p>
+                            <h3 class="h3-text-border text-custom">Zanimivosti:</h3>
+                            <p class="lead">Fitness uporabljajo številni znani športniki, kot so: <br/>- Tina Maze <br/>- Ilka Štuhec <br/>- Peter Prevc <br/>- Vasilij Žbogar <br/>- Tina Trstenjak<br/>ter mnogi drugi.</p>
                         </div>
                     </div>
                 </div>
@@ -133,10 +133,11 @@
     </section>
 
     <!-- Telo (Spredaj in zadaj) -->
-    <section id="telo" class="py-lg-5 bg-secondary">
+    <section id="telo" class="py-lg-5 bg-custom">
         <div class="container">
             <div class="zamik">
                 <h1 align="center" class="h1-text-border">Vadbe Fitnessa</h1>
+                <hr class="hr-naslov bg-light"/>
                 <div align="center">
                     <div id="spredajTelo">
                         <p id="demo"><img src="fitness-body-img/spredaj.png"  alt="teloSpredaj" usemap="#teloSpredaj"/></p>
@@ -150,12 +151,12 @@
                         </div>
 
                         <map name="teloSpredaj">
-                            <area shape="poly" coords="70,90,80,87,88,87,84,98,81,106,74,144,63,170,57,190,38,224,24,272,13,278,7,272,4,259,9,240,22,222,35,172,45,153,55,115,63,94" alt="desnaRoka" href="https://www.w3schools.com/html/" onmousemove="roke(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="86,209,99,227,110,255,118,284,86,380,82,415,70,449,69,477,30,500,24,488,51,461,55,410,61,377,67,346,66,308,73,249" alt="desnaNoga" href="https://www.w3schools.com/html/"  onmousemove="noge(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="94,87,125,91,157,87,172,136,152,145,127,143,105,146,79,137,85,110" alt="prsa" href="https://www.w3schools.com/html/" onmousemove="prsa(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="78,143,100,150,126,149,152,151,172,144,163,180,163,202,143,231,129,280,122,281,113,245,102,221,87,205,86,179" alt="trebuh" href="https://www.w3schools.com/html/" onmousemove="trebuh(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="163,87,187,96,196,116,206,155,216,177,226,215,246,256,243,273,236,278,224,264,215,231,195,193,183,161,176,147,174,118" alt="levaRoka" href="https://www.w3schools.com/html/" onmousemove="roke(event)" onmouseout="pocisti()"/>
-                            <area shape="poly" coords="165,209,182,280,185,336,201,455,227,486,223,499,186,479,181,455,167,411,163,382,131,285,144,240,154,222" alt="levaNoga" href="https://www.w3schools.com/html/" onmousemove="noge(event)" onmouseout="pocisti()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#roke" coords="70,90,80,87,88,87,84,98,81,106,74,144,63,170,57,190,38,224,24,272,13,278,7,272,4,259,9,240,22,222,35,172,45,153,55,115,63,94" alt="desnaRoka" onmousemove="roke(event)" onmouseout="pocisti()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#noge" coords="86,209,99,227,110,255,118,284,86,380,82,415,70,449,69,477,30,500,24,488,51,461,55,410,61,377,67,346,66,308,73,249" alt="desnaNoga" onmousemove="noge(event)" onmouseout="pocisti()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#prsa" coords="94,87,125,91,157,87,172,136,152,145,127,143,105,146,79,137,85,110" alt="prsa" onmousemove="prsa(event)" onmouseout="pocisti()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#trebusne" coords="78,143,100,150,126,149,152,151,172,144,163,180,163,202,143,231,129,280,122,281,113,245,102,221,87,205,86,179" alt="trebuh" onmousemove="trebuh(event)" onmouseout="pocisti()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#roke" coords="163,87,187,96,196,116,206,155,216,177,226,215,246,256,243,273,236,278,224,264,215,231,195,193,183,161,176,147,174,118" alt="levaRoka" onmousemove="roke(event)" onmouseout="pocisti()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#noge" coords="165,209,182,280,185,336,201,455,227,486,223,499,186,479,181,455,167,411,163,382,131,285,144,240,154,222" alt="levaNoga" onmousemove="noge(event)" onmouseout="pocisti()"/>
                         </map>
                     </div>
                     <div id="zadajTelo" style="display: none;">
@@ -170,13 +171,349 @@
                         </div>
 
                         <map name="teloZadaj">
-                            <area shape="poly" coords="176,88,193,106,207,151,220,194,230,222,247,256,243,271,239,276,225,266,215,227,190,186,185,163,177,145,180,112,180,102" alt="desnaRoka" href="https://www.w3schools.com/html/" onmousemove="rokeZadaj(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="132,284,160,290,180,279,185,339,188,371,196,401,197,432,198,457,199,463,209,458,218,468,190,483,182,481,180,456,170,428,166,409,163,376,152,352,136,299" alt="desnaNoga" href="https://www.w3schools.com/html/"  onmousemove="nogeZadaj(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="80,86,93,87,123,74,154,84,169,87,177,105,163,177,162,190,127,228,125,229,91,191,84,171,78,148,73,108,76,98" alt="hrbet" href="https://www.w3schools.com/html/" onmousemove="hrbet(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="87,198,97,213,112,227,125,237,139,225,146,216,158,205,161,199,168,217,175,246,179,265,174,276,163,283,148,282,124,279,106,283,93,284,83,284,71,275,69,268,73,241" alt="rit" href="https://www.w3schools.com/html/" onmousemove="rit(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="75,87,70,104,71,124,74,144,61,177,46,205,36,229,29,258,14,276,8,272,6,258,3,257,8,240,20,227,31,190,39,163,45,157,47,133,54,117,60,98,68,90" alt="levaRoka" href="https://www.w3schools.com/html/" onmousemove="rokeZadaj(event)" onmouseout="pocistiZadaj()"/>
-                            <area shape="poly" coords="69,281,79,291,89,291,118,284,85,379,83,413,73,445,68,470,68,481,57,484,31,472,31,461,37,457,49,463,52,425,54,402,60,371,64,341,64,314,67,296" alt="levaNoga" href="https://www.w3schools.com/html/" onmousemove="nogeZadaj(event)" onmouseout="pocistiZadaj()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#roke" coords="176,88,193,106,207,151,220,194,230,222,247,256,243,271,239,276,225,266,215,227,190,186,185,163,177,145,180,112,180,102" alt="desnaRoka" onmousemove="rokeZadaj(event)" onmouseout="pocistiZadaj()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#noge" coords="132,284,160,290,180,279,185,339,188,371,196,401,197,432,198,457,199,463,209,458,218,468,190,483,182,481,180,456,170,428,166,409,163,376,152,352,136,299" alt="desnaNoga" onmousemove="nogeZadaj(event)" onmouseout="pocistiZadaj()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#hrbet" coords="80,86,93,87,123,74,154,84,169,87,177,105,163,177,162,190,127,228,125,229,91,191,84,171,78,148,73,108,76,98" alt="hrbet" onmousemove="hrbet(event)" onmouseout="pocistiZadaj()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#rit" coords="87,198,97,213,112,227,125,237,139,225,146,216,158,205,161,199,168,217,175,246,179,265,174,276,163,283,148,282,124,279,106,283,93,284,83,284,71,275,69,268,73,241" alt="rit" onmousemove="rit(event)" onmouseout="pocistiZadaj()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#roke" coords="75,87,70,104,71,124,74,144,61,177,46,205,36,229,29,258,14,276,8,272,6,258,3,257,8,240,20,227,31,190,39,163,45,157,47,133,54,117,60,98,68,90" alt="levaRoka" onmousemove="rokeZadaj(event)" onmouseout="pocistiZadaj()"/>
+                            <area shape="poly" data-toggle="modal" data-target="#noge" coords="69,281,79,291,89,291,118,284,85,379,83,413,73,445,68,470,68,481,57,484,31,472,31,461,37,457,49,463,52,425,54,402,60,371,64,341,64,314,67,296" alt="levaNoga" onmousemove="nogeZadaj(event)" onmouseout="pocistiZadaj()"/>
                         </map>
+                    </div>
+
+                    <!-- Modal roke -->
+                    <div class="modal fade" id="roke" tabindex="-1" role="dialog" aria-labelledby="rokeLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="naslovRoke">Vadbe za roke</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ui:repeat value="#{vrniVadbeZaRoke.vadbeZaRoke}" var="vadba">
+                                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(vadba.idVadba)}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                        <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                        <h3 class="mb-0">
+                                                            <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
+                                                                <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                            </h:link>
+                                                        </h3>
+                                                        <div class="mb-1 text-muted">Tip vadbe:
+                                                            <span class="text-custom">
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 0}">
+                                                                Posamična <i class='fas fa-user text-muted' />
+                                                            </h:panelGroup>
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 1}">
+                                                                Skupinska <i class='fas fa-users text-muted' />
+                                                            </h:panelGroup>
+                                                        </span>
+                                                        </div>
+                                                        <p class="card-text mb-auto">#{vadba.opis}</p>
+                                                        <p class="card-text mb-auto text-danger">
+                                                            <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                ##{znacka.naziv}
+                                                            </ui:repeat>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ui:repeat>
+                                    <h:panelGroup rendered="#{vrniVadbeZaRoke.vadbeZaRoke == null}">
+                                        <div align="center">
+                                            <p class="lead">Trenutno ni dodane nobene vadbe za roke.</p>
+                                        </div>
+                                    </h:panelGroup>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal noge -->
+                    <div class="modal fade" id="noge" tabindex="-1" role="dialog" aria-labelledby="nogeLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="naslovNoge">Vadbe za noge</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ui:repeat value="#{vrniVadbeZaNoge.vadbeZaNoge}" var="vadba">
+                                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(vadba.idVadba)}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                        <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                        <h3 class="mb-0">
+                                                            <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
+                                                                <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                            </h:link>
+                                                        </h3>
+                                                        <div class="mb-1 text-muted">Tip vadbe:
+                                                            <span class="text-custom">
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 0}">
+                                                                Posamična <i class='fas fa-user text-muted' />
+                                                            </h:panelGroup>
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 1}">
+                                                                Skupinska <i class='fas fa-users text-muted' />
+                                                            </h:panelGroup>
+                                                        </span>
+                                                        </div>
+                                                        <p class="card-text mb-auto">#{vadba.opis}</p>
+                                                        <p class="card-text mb-auto text-danger">
+                                                            <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                ##{znacka.naziv}
+                                                            </ui:repeat>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ui:repeat>
+                                    <h:panelGroup rendered="#{vrniVadbeZaNoge.vadbeZaNoge == null}">
+                                        <div align="center">
+                                            <p class="lead">Trenutno ni dodane nobene vadbe za noge.</p>
+                                        </div>
+                                    </h:panelGroup>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal prsa -->
+                    <div class="modal fade" id="prsa" tabindex="-1" role="dialog" aria-labelledby="prsaLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="naslovPrsa">Vadbe za prsa</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ui:repeat value="#{vrniVadbeZaPrsa.vadbeZaPrsa}" var="vadba">
+                                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(vadba.idVadba)}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                        <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                        <h3 class="mb-0">
+                                                            <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
+                                                                <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                            </h:link>
+                                                        </h3>
+                                                        <div class="mb-1 text-muted">Tip vadbe:
+                                                            <span class="text-custom">
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 0}">
+                                                                Posamična <i class='fas fa-user text-muted' />
+                                                            </h:panelGroup>
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 1}">
+                                                                Skupinska <i class='fas fa-users text-muted' />
+                                                            </h:panelGroup>
+                                                        </span>
+                                                        </div>
+                                                        <p class="card-text mb-auto">#{vadba.opis}</p>
+                                                        <p class="card-text mb-auto text-danger">
+                                                            <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                ##{znacka.naziv}
+                                                            </ui:repeat>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ui:repeat>
+                                    <h:panelGroup rendered="#{vrniVadbeZaPrsa.vadbeZaPrsa == null}">
+                                        <div align="center">
+                                            <p class="lead">Trenutno ni dodane nobene vadbe za prsa.</p>
+                                        </div>
+                                    </h:panelGroup>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal trebusne -->
+                    <div class="modal fade" id="trebusne" tabindex="-1" role="dialog" aria-labelledby="trebusneLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="naslovTrebusne">Vadbe za trebušne mišice</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ui:repeat value="#{vrniVadbeZaTrebusne.vadbeZaTrebusne}" var="vadba">
+                                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(vadba.idVadba)}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                        <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                        <h3 class="mb-0">
+                                                            <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
+                                                                <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                            </h:link>
+                                                        </h3>
+                                                        <div class="mb-1 text-muted">Tip vadbe:
+                                                            <span class="text-custom">
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 0}">
+                                                                Posamična <i class='fas fa-user text-muted' />
+                                                            </h:panelGroup>
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 1}">
+                                                                Skupinska <i class='fas fa-users text-muted' />
+                                                            </h:panelGroup>
+                                                        </span>
+                                                        </div>
+                                                        <p class="card-text mb-auto">#{vadba.opis}</p>
+                                                        <p class="card-text mb-auto text-danger">
+                                                            <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                ##{znacka.naziv}
+                                                            </ui:repeat>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ui:repeat>
+                                    <h:panelGroup rendered="#{vrniVadbeZaTrebusne.vadbeZaTrebusne == null}">
+                                        <div align="center">
+                                            <p class="lead">Trenutno ni dodane nobene vadbe za trebušne mišice.</p>
+                                        </div>
+                                    </h:panelGroup>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal hrbet -->
+                    <div class="modal fade" id="hrbet" tabindex="-1" role="dialog" aria-labelledby="hrbetLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="naslovHrbet">Vadbe za hrbtne mišice</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ui:repeat value="#{vrniVadbeZaHrbet.vadbeZaHrbet}" var="vadba">
+                                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(vadba.idVadba)}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                        <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                        <h3 class="mb-0">
+                                                            <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
+                                                                <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                            </h:link>
+                                                        </h3>
+                                                        <div class="mb-1 text-muted">Tip vadbe:
+                                                            <span class="text-custom">
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 0}">
+                                                                Posamična <i class='fas fa-user text-muted' />
+                                                            </h:panelGroup>
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 1}">
+                                                                Skupinska <i class='fas fa-users text-muted' />
+                                                            </h:panelGroup>
+                                                        </span>
+                                                        </div>
+                                                        <p class="card-text mb-auto">#{vadba.opis}</p>
+                                                        <p class="card-text mb-auto text-danger">
+                                                            <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                ##{znacka.naziv}
+                                                            </ui:repeat>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ui:repeat>
+                                    <h:panelGroup rendered="#{vrniVadbeZaHrbet.vadbeZaHrbet == null}">
+                                        <div align="center">
+                                            <p class="lead">Trenutno ni dodane nobene vadbe za hrbtne mišice.</p>
+                                        </div>
+                                    </h:panelGroup>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal rit -->
+                    <div class="modal fade" id="rit" tabindex="-1" role="dialog" aria-labelledby="ritLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="naslovRit">Vadbe za zadnjico</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ui:repeat value="#{vrniVadbeZaRit.vadbeZaRit}" var="vadba">
+                                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(vadba.idVadba)}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                        <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                        <h3 class="mb-0">
+                                                            <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
+                                                                <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                            </h:link>
+                                                        </h3>
+                                                        <div class="mb-1 text-muted">Tip vadbe:
+                                                            <span class="text-custom">
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 0}">
+                                                                Posamična <i class='fas fa-user text-muted' />
+                                                            </h:panelGroup>
+                                                            <h:panelGroup rendered="#{vadba.tipVadbe == 1}">
+                                                                Skupinska <i class='fas fa-users text-muted' />
+                                                            </h:panelGroup>
+                                                        </span>
+                                                        </div>
+                                                        <p class="card-text mb-auto">#{vadba.opis}</p>
+                                                        <p class="card-text mb-auto text-danger">
+                                                            <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                ##{znacka.naziv}
+                                                            </ui:repeat>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ui:repeat>
+                                    <h:panelGroup rendered="#{vrniVadbeZaRit.vadbeZaRit == null}">
+                                        <div align="center">
+                                            <p class="lead">Trenutno ni dodane nobene vadbe za rit.</p>
+                                        </div>
+                                    </h:panelGroup>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <button class="btn btn-primary text-light" style="width: 200px; margin-top: 2%;" type="button" onclick="switchBody()">Obrni telo</button>
@@ -191,7 +528,7 @@
         <div class="container">
             <div class="zamik">
                 <h1 align="center" class="h1-text-border">Programi Fitnessa</h1>
-                <hr/>
+                <hr class="hr-naslov" />
 
                 <div id="programiOutput" class="row mb-2">
                     <ui:repeat value="#{vrniVsePrograme.vsiProgrami}" var="program">
@@ -209,41 +546,46 @@
                         </div>
                     </div>
                     </ui:repeat>
+                    <h:panelGroup rendered="#{vrniVsePrograme.vsiProgrami == null}}">
+                        <div align="center">
+                            <p>Trenutno ni dodanega programa.</p>
+                        </div>
+                    </h:panelGroup>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Zemljevid fitnesov -->
-    <section id="map" style="height: 400px;">
+    <section id="map" style="height: 500px;">
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928.8189398817747!2d15.638171598905618!3d46.55939494774804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x582cd926bd2ac243!2sUM+FERI!5e0!3m2!1ssl!2ssi!4v1528297460447"></iframe>
     </section>
 
-    <!-- Kontak -->
+    <!-- Kontakt -->
     <section id="kontakt" class="py-lg-5">
         <div class="container">
             <div class="zamik">
                 <h1 align="center" class="h1-text-border">Kontakt</h1>
-                <hr/>
-                <p class="text-center">Pokličite nas ali nam pošljite sporočilo. Naši strokovnjaki vam bodo skušali pomagati po najboljših močeh.</p>
+                <hr class="hr-naslov" />
+                <p class="lead text-center">Pokličite nas ali nam pošljite sporočilo. Naši strokovnjaki vam bodo skušali pomagati po najboljših močeh.</p>
                 <div class="row justify-content-center" style="margin-bottom: 20px;">
                     <div class="col-4 text-center">
                         <i class="fas fa-phone fa-2x color-icon" />
-                        <p>02 443 5354</p>
+                        <p class="lead">02 443 5354</p>
                     </div>
                     <div class="col-4 text-center">
                         <i class="fas fa-envelope fa-2x color-icon" />
-                        <p><a class="text-danger" href="mailto:zivljenje.aktivno@gmail.com">Email</a></p>
+                        <p class="lead"><a class="text-danger" href="mailto:zivljenje.aktivno@gmail.com">Email</a></p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-4 text-center">
                         <i class="fas fa-globe fa-2x color-icon" />
-                        <p>Maribor, Slovenija</p>
+                        <p class="lead">Maribor, Slovenija</p>
                     </div>
                     <div class="col-4 text-center">
                         <i class="fas fa-building fa-2x color-icon" />
-                        <p>Fitness d.o.o.<br/>Smetanova ulica 17, 2000 Maribor</p>
+                        <p class="lead">Fitness d.o.o.<br/>Smetanova ulica 17, 2000 Maribor</p>
                     </div>
                 </div>
             </div>
@@ -251,7 +593,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-4 bg-dark">
         <div class="container">
             <div align="center">
                 <p class="m-0 text-center text-light">

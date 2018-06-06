@@ -18,8 +18,6 @@ public class EJBVadba {
     EntityManager entityManager;
 
     @EJB
-    private EJBProgram ejbProgram;
-    @EJB
     private EJBPostavka ejbPostavka;
 
     public List<Vadba> vrniVseVadbe() {
@@ -58,5 +56,29 @@ public class EJBVadba {
         entityManager.createQuery("UPDATE Znacka z SET z.tkIdVadba = null WHERE z.tkIdVadba = " + vadba.getIdVadba()).executeUpdate();
 
         entityManager.remove(vadba);
+    }
+        //SELECT p FROM Teacher t JOIN t.phones p WHERE t.firstName = :firstName
+    public List<Vadba> vrniVadbeZaRoke() {
+        return entityManager.createQuery("SELECT v FROM Znacka z JOIN z.tkIdVadba v WHERE z.naziv = 'roke'").getResultList();
+    }
+
+    public List<Vadba> vrniVadbeZaNoge() {
+        return entityManager.createQuery("SELECT v FROM Znacka z JOIN z.tkIdVadba v WHERE z.naziv = 'noge'").getResultList();
+    }
+
+    public List<Vadba> vrniVadbeZaPrsa() {
+        return entityManager.createQuery("SELECT v FROM Znacka z JOIN z.tkIdVadba v WHERE z.naziv = 'prsa'").getResultList();
+    }
+
+    public List<Vadba> vrniVadbeZaTrebusne() {
+        return entityManager.createQuery("SELECT v FROM Znacka z JOIN z.tkIdVadba v WHERE z.naziv = 'trebusne'").getResultList();
+    }
+
+    public List<Vadba> vrniVadbeZaHrbet() {
+        return entityManager.createQuery("SELECT v FROM Znacka z JOIN z.tkIdVadba v WHERE z.naziv = 'hrbet'").getResultList();
+    }
+
+    public List<Vadba> vrniVadbeZaRit() {
+        return entityManager.createQuery("SELECT v FROM Znacka z JOIN z.tkIdVadba v WHERE z.naziv = 'rit'").getResultList();
     }
 }
