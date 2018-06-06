@@ -17,8 +17,8 @@
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="css/full-slider.css" rel="stylesheet" />
-    <!-- Custom styles for programe -->
-    <link href="css/program.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
 </h:head>
 <h:body>
     <!-- Navigation -->
@@ -64,22 +64,22 @@
                 <!-- Slide One -->
                 <div class="carousel-item active" style="background-image: url('images/slider/fitness-3.png')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="h3-text-border">First Slide</h3>
-                        <p>This is a description for the first slide.</p>
+                        <h3 class="h3-text-border">Peter Maher, maratonec</h3>
+                        <p>“Tek je velik vprašaj, ki se pojavi vsak dan. Vpraša te: Ali boš danes mlahav ali boš močan?”</p>
                     </div>
                 </div>
                 <!-- Slide Two -->
                 <div class="carousel-item" style="background-image: url('images/slider/fitness-1.png')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="h3-text-border">Second Slide</h3>
-                        <p>This is a description for the second slide.</p>
+                        <h3 class="h3-text-border">Brooks Johnson, trener sprinterjev</h3>
+                        <p>“Hitrost res ubija. Pri daljših razdal­jah ubija tiste, ki je nimajo.”</p>
                     </div>
                 </div>
                 <!-- Slide Three -->
                 <div class="carousel-item" style="background-image: url('images/slider/fitness-2.png')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="h3-text-border">Third Slide</h3>
-                        <p>This is a description for the third slide.</p>
+                        <h3 class="h3-text-border">Tom DuBos, tekač</h3>
+                        <p>“Če trenirate premalo, tvegate, da ne boste zmogli do cilja, če preveč, da ne boste zmogli do starta.”</p>
                     </div>
                 </div>
             </div>
@@ -98,25 +98,45 @@
     <section id="predstavitev" class="py-lg-5">
         <div class="container">
             <div class="zamik">
-                <h1 align="center" class="h1-text-border">Predstavitev</h1>
-                <hr />
-                <p style="text-align: justify;">It is a long established fact that a reader will be distracted by the readable content
-                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to using 'Content here,
-                    content here', making it look like readable English. Many desktop publishing
-                    packages and web page editors now use Lorem Ipsum as their default model text,
-                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-                    Various versions have evolved over the years, sometimes by accident, sometimes on
-                    purpose (injected humour and the like).</p>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fas fa-3x fa-info-circle color-icon" style="margin-bottom: 5px;"/>
+                            <h3 class="text-custom">Kaj je Fitness?</h3>
+                            <p>Spletni portal Fitness vam pomaga nadzorovati vašo vadbo tako, da upravljate fitnes programe in imate popolen nadzor nad njimi.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fas fa-3x fa-thumbs-up color-icon" style="margin-bottom: 5px;" />
+                            <h3 class="text-custom">Zakaj izbrati ravno nas?</h3>
+                            <p>Ker spletni portal Fitness ustvarja skupina profesionalnih športnikov, ki zelo dobro vedo kaj je pri spremljnaju vadbe ali fitnes programa pomembno.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fas fa-3x fa-newspaper-o color-icon" style="margin-bottom: 5px;" />
+                            <h3 class="text-custom">Ponujamo:</h3>
+                            <p>- Spremljanje vadb <br/>- Pomoč pri načtrovanju vadb <br/>- Spremljanje napredka <br/>- Fitnes programe</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fas fa-3x fa-smile-o color-icon" style="margin-bottom: 5px;" />
+                            <h3 class="text-custom">Zanimivosti:</h3>
+                            <p>Fitness uporabljajo številni znani športniki, kot so: <br/>- Tina Maze <br/>- Ilka Štuhec <br/>- Peter Prevc <br/>- Vasilij Žbogar <br/>- Tina Trstenjak<br/>ter mnogi drugi.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Telo (Spredaj in zadaj) -->
-    <section id="telo" class="py-lg-5 bg-custom">
+    <section id="telo" class="py-lg-5 bg-secondary">
         <div class="container">
             <div class="zamik">
-                <h1 align="center" class="h1-text-border">Izberite del telesa</h1>
+                <h1 align="center" class="h1-text-border">Vadbe Fitnessa</h1>
                 <div align="center">
                     <div id="spredajTelo">
                         <p id="demo"><img src="fitness-body-img/spredaj.png"  alt="teloSpredaj" usemap="#teloSpredaj"/></p>
@@ -159,7 +179,7 @@
                         </map>
                     </div>
                     <div>
-                        <button class="btn btn-primary text-light" style="width: 150px; margin-top: 2%;" type="button" onclick="switchBody()">Obrni telo</button>
+                        <button class="btn btn-primary text-light" style="width: 200px; margin-top: 2%;" type="button" onclick="switchBody()">Obrni telo</button>
                     </div>
                 </div>
             </div>
@@ -172,42 +192,31 @@
             <div class="zamik">
                 <h1 align="center" class="h1-text-border">Programi Fitnessa</h1>
                 <hr/>
-                <!-- ******BLOG LIST****** -->
-                <div class="blog blog-category blog-archive" >
-                    <div class="row">
-                        <div class="blog-list blog-category-list">
 
-                            <article class="post col-md-offset-1 col-sm-offset-0 col-xs-offset-0 col-xs-12 col-md-10" >
-                                <div class="post-inner" style="background-color: white;">
-                                    <div class="content">
-                                        <div class="date-label">
-                                            <span class="month">SEP</span>
-                                            <span class="date-number">23</span>
-                                        </div>
-                                        <h3 class="post-title"><a href="blog-single.html">Phasellus accumsan</a></h3>
-                                        <div class="meta">
-                                            <ul class="meta-list list-inline">
-                                                <li class="post-author">Tezavnost: <span>6</span></li>
-                                            </ul><!--//meta-list-->
-                                        </div><!--meta-->
-                                        <div class="post-entry">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                                            <a class="read-more" href="blog-single.html">Read more <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div><!--//content-->
-                                </div><!--//post-inner-->
-                            </article><!--//post-->
-
-                        </div><!--//blog-list-->
-                    </div><!--//row-->
-                </div><!--//blog-->
+                <div id="programiOutput" class="row mb-2">
+                    <ui:repeat value="#{vrniVsePrograme.vsiProgrami}" var="program">
+                    <div class="col-md-6">
+                        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                            <div class="card-body d-flex flex-column align-items-start">
+                                <strong class="d-inline-block mb-2 text-dark">Program</strong>
+                                <h3 class="mb-0">
+                                    <a class="text-dark" href="#">#{program.naziv}</a>
+                                </h3>
+                                <div class="mb-1 text-muted">Intenzivnost: <span class="text-custom">#{program.intenzivnost}</span></div>
+                                <p class="card-text mb-auto">#{program.opis}</p>
+                                <a class="text-danger" href="#">Podrobnosti programa</a>
+                            </div>
+                        </div>
+                    </div>
+                    </ui:repeat>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Zemljevid fitnesov -->
     <section id="map" style="height: 400px;">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928.8189398817747!2d15.638171598905618!3d46.55939494774804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x582cd926bd2ac243!2sUM+FERI!5e0!3m2!1ssl!2ssi!4v1528297460447"></iframe>
     </section>
 
     <!-- Kontak -->
@@ -216,6 +225,27 @@
             <div class="zamik">
                 <h1 align="center" class="h1-text-border">Kontakt</h1>
                 <hr/>
+                <p class="text-center">Pokličite nas ali nam pošljite sporočilo. Naši strokovnjaki vam bodo skušali pomagati po najboljših močeh.</p>
+                <div class="row justify-content-center" style="margin-bottom: 20px;">
+                    <div class="col-4 text-center">
+                        <i class="fas fa-phone fa-2x color-icon" />
+                        <p>02 443 5354</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <i class="fas fa-envelope fa-2x color-icon" />
+                        <p><a class="text-danger" href="mailto:zivljenje.aktivno@gmail.com">Email</a></p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-4 text-center">
+                        <i class="fas fa-globe fa-2x color-icon" />
+                        <p>Maribor, Slovenija</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <i class="fas fa-building fa-2x color-icon" />
+                        <p>Fitness d.o.o.<br/>Smetanova ulica 17, 2000 Maribor</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -223,9 +253,12 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-light">
-                Copyright <span style="color: #FF851B;">©</span> Praktikum 2
-            </p>
+            <div align="center">
+                <p class="m-0 text-center text-light">
+                    Copyright <span style="color: #FF851B;">©</span> Praktikum 2
+                </p>
+                <a href="#domov" onclick="goToSection($(this.getAttribute('href')))"><i style="padding-top: 10px;" class="fas fa-arrow-circle-up fa-2x text-custom"/></a>
+            </div>
         </div>
     </footer>
 

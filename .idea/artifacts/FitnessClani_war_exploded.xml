@@ -6,8 +6,10 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="FitnessClani" />
+          <element id="jpa-descriptors" facet="FitnessClani/jpa/JPA" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="FitnessClani/ejb/EJB" />
     </root>
   </artifact>
 </component>
