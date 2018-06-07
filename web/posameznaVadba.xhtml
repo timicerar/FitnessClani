@@ -22,97 +22,82 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
 </h:head>
 <h:body>
-    <f:metadata>
-        <f:viewParam name="idVadba" value="#{podrobnostiVadbe.idIzbraneVadbe}" />
-    </f:metadata>
+    <ui:composition template="WEB-INF/template/template-ostalo.xhtml">
+        <ui:define name="content">
+            <f:view>
+                <f:metadata>
+                    <f:viewParam name="idVadba" value="#{podrobnostiVadbe.idIzbraneVadbe}" />
+                </f:metadata>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="icon/dumbbell-32.png"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="index.xhtml#telo" onclick="goToSection($(this.getAttribute('href')));">Domov</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <section id="posameznaVadba" class="py-lg-5">
-        <div class="container">
-            <div class="zamik-lg">
-                <div class="row">
-                    <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba != null}">
-                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(podrobnostiVadbe.izbranaVadba.idVadba)}
-                        <div class="col-12">
-                            <div class="card mb-4 box-shadow">
-                                <p:graphicImage styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}" />
-                                <div class="card-body">
-                                    <h2 class="h3-text-border">#{podrobnostiVadbe.izbranaVadba.naziv}</h2>
-                                    <p class="lead card-text">#{podrobnostiVadbe.izbranaVadba.opis}</p>
-                                    <p class="lead card-text text-danger">
-                                        <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
-                                            ##{znacka.naziv}
-                                        </ui:repeat>
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a class="btn btn-sm btn-outline-primary" href="index.xhtml#telo">Nazaj</a>
+                <section id="posameznaVadba" class="py-lg-5">
+                    <div class="container">
+                        <div class="zamik-lg">
+                            <div class="row">
+                                <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba != null}">
+                                    #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(podrobnostiVadbe.izbranaVadba.idVadba)}
+                                    <div class="col-12">
+                                        <div class="card mb-4 box-shadow">
+                                            <p:graphicImage styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                <f:param name="idVadba" value="#{podrobnostiVadbe.izbranaVadba.idVadba}" />
+                                            </p:graphicImage>
+                                            <div class="card-body">
+                                                <h2 class="h3-text-border">#{podrobnostiVadbe.izbranaVadba.naziv}</h2>
+                                                <p class="lead card-text">#{podrobnostiVadbe.izbranaVadba.opis}</p>
+                                                <p class="lead card-text text-danger">
+                                                    <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                        ##{znacka.naziv}
+                                                    </ui:repeat>
+                                                </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#videoModal">Video posnetek</button>
+                                                        <a class="btn btn-sm btn-outline-danger" href="index.xhtml#telo">Nazaj</a>
+                                                    </div>
+                                                    <small class="text-muted">
+                                                        <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba.tipVadbe == 0}">
+                                                            Posamična vadba <i class='fas fa-user text-custom' />
+                                                        </h:panelGroup>
+                                                        <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba.tipVadbe == 1}">
+                                                            Skupinska vadba <i class='fas fa-users text-custom' />
+                                                        </h:panelGroup>
+                                                    </small>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <small class="text-muted">
-                                            <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba.tipVadbe == 0}">
-                                                Posamična vadba <i class='fas fa-user text-custom' />
-                                            </h:panelGroup>
-                                            <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba.tipVadbe == 1}">
-                                                Skupinska vadba <i class='fas fa-users text-custom' />
-                                            </h:panelGroup>
-                                        </small>
                                     </div>
-                                </div>
+
+                                    <!-- Modal za video -->
+                                    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalTitle">Video posnetek za vadbo</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/#{podrobnostiVadbe.izbranaVadba.video}"></iframe>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba == null}">
+                                    <div class="col-12">
+                                        <p class="lead text-center">Vadba s takšnim <span style="color: #FF4136;">ID</span>-jem ne obstaja!</p>
+                                    </div>
+                                </h:panelGroup>
                             </div>
                         </div>
-                    </h:panelGroup>
-                    <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba == null}">
-                        <div class="col-12">
-                            <p class="lead text-center">Vadba s takšnim <span style="color: #FF4136;">ID</span>-jem ne obstaja!</p>
-                        </div>
-                    </h:panelGroup>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </div>
+                </section>
 
-    <!-- Footer -->
-    <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba != null}">
-        <footer class="py-4 bg-dark">
-            <div class="container">
-                <div align="center">
-                    <p class="m-0 text-center text-light">
-                        Copyright <span style="color: #FF851B;">©</span> Praktikum 2
-                    </p>
-                    <a href="#posameznaVadba" onclick="goToSection($(this.getAttribute('href')))"><i style="padding-top: 10px;" class="fas fa-arrow-circle-up fa-2x text-custom"/></a>
-                </div>
-            </div>
-        </footer>
-    </h:panelGroup>
-
-    <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba == null}">
-        <footer class="footer py-4 bg-dark">
-            <div class="container">
-                <div align="center">
-                    <p class="m-0 text-center text-light">
-                        Copyright <span style="color: #FF851B;">©</span> Praktikum 2
-                    </p>
-                    <a href="#posameznaVadba" onclick="goToSection($(this.getAttribute('href')))"><i style="padding-top: 10px;" class="fas fa-arrow-circle-up fa-2x text-custom"/></a>
-                </div>
-            </div>
-        </footer>
-    </h:panelGroup>
+            </f:view>
+        </ui:define>
+    </ui:composition>
 
     <script>
         function goToSection(target) {

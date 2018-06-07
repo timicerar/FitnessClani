@@ -51,6 +51,10 @@
     color: #FF7F4F;
 }
 
+.text-custom-blue {
+    color: #273756;
+}
+
 .color-icon {
     color: #273756;
 }
@@ -71,4 +75,51 @@
 .hr-naslov {
     width: 25%;
     margin-bottom: 50px;
+}
+
+.a-link:hover {
+    color: #ff8c4f;
+    text-decoration: underline;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-primary-fb {
+    color: #fff;
+    background-color: #0074D9;
+    border-color: #0074D9;
+}
+
+.btn-primary-fb:hover {
+    color: #fff;
+    background-color: #0066c0;
+    border-color: #0074D9;
+}
+
+.btn-primary-fb:focus, .btn-primary-fb.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,116,217, 0.8);
+}
+
+.btn-primary-fb.disabled, .btn-primary-fb:disabled {
+    color: #fff;
+    background-color: #0074D9;
+    border-color: #0074D9;
+}
+
+.btn-primary-fb:not(:disabled):not(.disabled):active, .btn-primary-fb:not(:disabled):not(.disabled).active,
+.show > .btn-primary-fb.dropdown-toggle {
+    color: #fff;
+    background-color: #0074D9;
+    border-color: #0074D9;
+}
+
+.btn-primary-fb:not(:disabled):not(.disabled):active:focus, .btn-primary-fb:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary-fb.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,116,217, 0.8);
+}
+
+.card-body-inner {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
 }

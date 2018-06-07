@@ -8,14 +8,14 @@ import si.um.feri.praktikum.ejb.EJBVadba;
 import si.um.feri.praktikum.vao.Vadba;
 
 import javax.ejb.EJB;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseId;
 import java.io.ByteArrayInputStream;
 
 @ManagedBean(name = "podrobnostiVadbe")
-@SessionScoped
+@ApplicationScoped
 public class PodrobnostiVadbeBean {
 
     @Getter
@@ -39,7 +39,10 @@ public class PodrobnostiVadbeBean {
         if (context.getCurrentPhaseId() == PhaseId.RENDER_RESPONSE) {
             return new DefaultStreamedContent();
         } else {
-            return new DefaultStreamedContent(new ByteArrayInputStream(izbranaVadba.getSlika()));
+            String idVadba = context.getExternalContext().getRequestParameterMap().get("idVadba");
+            Vadba vadba = ejbVadba.vadbaById(Integer.parseInt(idVadba));
+
+            return new DefaultStreamedContent(new ByteArrayInputStream(vadba.getSlika()));
         }
     }
 }
