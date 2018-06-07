@@ -1,9 +1,9 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-ejb" name="FitnessClani:ejb exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/FitnessClani_ejb_exploded</output-path>
+  <artifact type="exploded-ejb" name="FitnessClani:EJB exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FitnessClani_EJB_exploded</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="FitnessClani/ejb/EJB" />
-      <element id="javaee-facet-classes" facet="FitnessClani/ejb/EJB" />
+      <element id="module-output" name="FitnessClani" />
     </root>
   </artifact>
 </component>
