@@ -2,6 +2,7 @@ package si.um.feri.praktikum.ejb;
 
 import si.um.feri.praktikum.vao.Dan;
 import si.um.feri.praktikum.vao.Postavka;
+import si.um.feri.praktikum.vao.Vadba;
 
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
@@ -56,5 +57,17 @@ public class EJBDan {
 
     public boolean validateNazivDnevaVProgramu(int idProgram, String naziv) {
         return entityManager.createQuery("SELECT d FROM Dan d, Program p WHERE d.tkIdProgram.idProgram = p.idProgram AND p.idProgram = " + idProgram + " AND d.naziv = '" + naziv + "'").getResultList().size() == 0;
+    }
+
+    public List<Postavka> vrniVadbeZaDanOgrevanje(int idDan) {
+        return entityManager.createQuery("SELECT p FROM Postavka p WHERE p.tkIdDan.idDan = " + idDan + " AND p.tipPostavke = 0").getResultList();
+    }
+
+    public List<Postavka> vrniVadbeZaDanGlavniDel(int idDan) {
+        return entityManager.createQuery("SELECT p FROM Postavka p WHERE p.tkIdDan.idDan = " + idDan + " AND p.tipPostavke = 1").getResultList();
+    }
+
+    public List<Postavka> vrniVadbeZaDanOhlajanje(int idDan) {
+        return entityManager.createQuery("SELECT p FROM Postavka p WHERE p.tkIdDan.idDan = " + idDan + " AND p.tipPostavke = 2").getResultList();
     }
 }

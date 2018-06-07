@@ -4,7 +4,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xml:lang="en" lang="en">
+      xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
 <h:head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>Fitness</title>
@@ -22,90 +22,263 @@
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"/>
 </h:head>
 <h:body>
-    <ui:composition template="WEB-INF/template/template-ostalo.xhtml">
-        <ui:define name="content">
-            <f:view>
-                <section id="programi" class="py-lg-5">
-                    <div class="container">
-                        <div class="zamik-lg">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card mb-4 box-shadow">
-                                        <div class="card-body">
-                                            <h3 class="h3-text-border lead">Naziv dneva</h3>
-                                            <p class="card-text">Opis dneva</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <button type="button" data-toggle="modal" data-target="#vadbe" class="btn btn-sm btn-outline-primary">Vadbe</button>
-                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Končaj dan</button>
-                                                </div>
-                                                <small class="text-muted"><i class="far fa-lg fa-calendar text-muted" /> <i class="far fa-lg fa-calendar-check text-success" /></small>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <!-- Modal za vadbe -->
-                                    <div class="modal fade" id="vadbe" tabindex="-1" role="dialog" aria-labelledby="vadbeLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="naslovVadbe">Vadbe za 'Dan naziv'</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <ui:repeat value="#{vrniVadbeZaHrbet.vadbeZaHrbet}" var="vadba">
-                                                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(vadba.idVadba)}
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                                                                    <div class="card-body d-flex flex-column align-items-start">
-                                                                        <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
-                                                                        <h3 class="mb-0">
-                                                                            <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
-                                                                                <f:param name="idVadba" value="#{vadba.idVadba}" />
-                                                                            </h:link>
-                                                                        </h3>
-                                                                        <div class="mb-1 text-muted">Tip vadbe:
-                                                                            <span class="text-custom">
-                                                                        <h:panelGroup rendered="#{vadba.tipVadbe == 0}">
-                                                                            Posamična <i class='fas fa-user text-muted' />
-                                                                        </h:panelGroup>
-                                                                        <h:panelGroup rendered="#{vadba.tipVadbe == 1}">
-                                                                            Skupinska <i class='fas fa-users text-muted' />
-                                                                        </h:panelGroup>
-                                                                    </span>
-                                                                        </div>
-                                                                        <p class="card-text mb-auto">#{vadba.opis}</p>
-                                                                        <p class="card-text mb-auto text-danger">
-                                                                            <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
-                                                                                ##{znacka.naziv}
-                                                                            </ui:repeat>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </ui:repeat>
-                                                    <h:panelGroup rendered="#{vrniVadbeZaHrbet.vadbeZaHrbet == null}">
-                                                        <div align="center">
-                                                            <p class="lead">Trenutno ni dodane nobene vadbe za hrbtne mišice.</p>
-                                                        </div>
-                                                    </h:panelGroup>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.xhtml"><img src="icon/dumbbell-32.png"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.xhtml#domov" onclick="goToSection($(this.getAttribute('href')));">Domov</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.xhtml#predstavitev" onclick="goToSection($(this.getAttribute('href')));">Predstavitev</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.xhtml#telo" onclick="goToSection($(this.getAttribute('href')));">Vadbe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.xhtml#programi" onclick="goToSection($(this.getAttribute('href')));">Programi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.xhtml#map" onclick="goToSection($(this.getAttribute('href')));">Zemljevid</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.xhtml#kontakt" onclick="goToSection($(this.getAttribute('href')));">Kontakt</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 10px;">
+                        <button type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-outline-primary text-light" style="width: 100%;">Prijava</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalTitle">Prijava v sistem</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary-fb" style="width: 100%;"><i class="fab fa-2x fa-facebook" /></button>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-danger" style="width: 100%;"><i class="fab fa-2x fa-google-plus" /></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <f:metadata>
+        <f:viewParam name="idProgram" value="#{vrniVseDneveZaProgram.idIzbranegaPrograma}" />
+    </f:metadata>
+
+    <section id="dneviPrograma" class="py-lg-5">
+        <div class="container">
+            <div class="zamik-lg">
+                <h:panelGroup rendered="#{vrniVseDneveZaProgram.dneviZaProgram != null}">
+                    <h1 class="h1-text-border text-center">#{vrniVseDneveZaProgram.izbranProgram.naziv}</h1>
+                    <hr class="hr-naslov" />
+                    <ui:repeat value="#{vrniVseDneveZaProgram.dneviZaProgram}" var="dan">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mb-4 box-shadow">
+                                    <div class="card-body">
+                                        <h3 class="h3-text-border lead">#{dan.naziv}</h3>
+                                        <p class="card-text">#{dan.opis}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <button type="button" data-toggle="modal" data-target="#vadbe#{dan.idDan}" class="btn btn-sm btn-outline-primary">Vadbe</button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Končaj dan</button>
                                             </div>
+                                            <small class="text-muted"><i class="far fa-lg fa-calendar text-muted" /> <i class="far fa-lg fa-calendar-check text-success" /></small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Modal za vadbe -->
+                        <div class="modal fade" id="vadbe#{dan.idDan}" tabindex="-1" role="dialog" aria-labelledby="vadbeLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="naslovVadbe">Vadbe za #{dan.naziv}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        #{vajeZaGlavniDel.nastaviVadbeZaGlavniDel(dan.idDan)}
+                                        #{vajeZaOgrevanje.nastaviVadbeZaOgrevanje(dan.idDan)}
+                                        #{vajeZaOhlajanje.nastaviVadbeZaOhlajanje(dan.idDan)}
+                                        <!-- OGREVANJE -->
+                                        <h:panelGroup rendered="#{vajeZaOgrevanje.vadbeZaOgrevanje.size() > 0}">
+                                            <h3 class="h3-text-border text-center" style="margin-bottom: 10px;">Vadbe za ogrevanje</h3>
+                                        </h:panelGroup>
+                                        <div class="row">
+                                            <ui:repeat value="#{vajeZaOgrevanje.vadbeZaOgrevanje}" var="postavka">
+                                                #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(postavka.tkIdVadba.idVadba)}
+                                                <div class="col-md-12">
+                                                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                        <div class="card-body d-flex flex-column align-items-start">
+                                                            <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                            <h3 class="mb-0">
+                                                                <h:link outcome="posameznaPostavkaVadba" styleClass="text-dark" value="#{postavka.tkIdVadba.naziv}">
+                                                                    <f:param name="idPostavka" value="#{postavka.idPostavka}" />
+                                                                </h:link>
+                                                            </h3>
+                                                            <div class="mb-1 text-muted">Tip vadbe:
+                                                                <span class="text-custom">
+                                                                    <h:panelGroup rendered="#{postavka.tkIdVadba.tipVadbe == 0}">
+                                                                        Posamična <i class='fas fa-user text-muted' />
+                                                                    </h:panelGroup>
+                                                                    <h:panelGroup rendered="#{postavka.tkIdVadba.tipVadbe == 1}">
+                                                                        Skupinska <i class='fas fa-users text-muted' />
+                                                                    </h:panelGroup>
+                                                                </span>
+                                                            </div>
+                                                            <p class="card-text mb-auto">#{postavka.tkIdVadba.opis}</p>
+                                                            <p class="card-text mb-auto text-danger">
+                                                                <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                    ##{znacka.naziv}
+                                                                </ui:repeat>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ui:repeat>
+                                        </div>
+                                        <h:panelGroup rendered="#{vajeZaOgrevanje.vadbeZaOgrevanje.size() == 0}">
+                                            <p class="lead text-center">Ni vadb za ogrevanje.</p>
+                                        </h:panelGroup>
+                                        <!-- GLAVNI DEL -->
+                                        <h:panelGroup rendered="#{vajeZaGlavniDel.vadbeZaGlavniDel.size() > 0}">
+                                            <h3 class="h3-text-border text-center" style="margin-bottom: 10px;">Glavni del treninga</h3>
+                                        </h:panelGroup>
+                                        <div class="row">
+                                            <ui:repeat value="#{vajeZaGlavniDel.vadbeZaGlavniDel}" var="postavka">
+                                                #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(postavka.tkIdVadba.idVadba)}
+                                                <div class="col-md-12">
+                                                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                        <div class="card-body d-flex flex-column align-items-start">
+                                                            <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                            <h3 class="mb-0">
+                                                                <h:link outcome="posameznaPostavkaVadba" styleClass="text-dark" value="#{postavka.tkIdVadba.naziv}">
+                                                                    <f:param name="idPostavka" value="#{postavka.idPostavka}" />
+                                                                </h:link>
+                                                            </h3>
+                                                            <div class="mb-1 text-muted">Tip vadbe:
+                                                                <span class="text-custom">
+                                                                    <h:panelGroup rendered="#{postavka.tkIdVadba.tipVadbe == 0}">
+                                                                        Posamična <i class='fas fa-user text-muted' />
+                                                                    </h:panelGroup>
+                                                                    <h:panelGroup rendered="#{postavka.tkIdVadba.tipVadbe == 1}">
+                                                                        Skupinska <i class='fas fa-users text-muted' />
+                                                                    </h:panelGroup>
+                                                                </span>
+                                                            </div>
+                                                            <p class="card-text mb-auto">#{postavka.tkIdVadba.opis}</p>
+                                                            <p class="card-text mb-auto text-danger">
+                                                                <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                    ##{znacka.naziv}
+                                                                </ui:repeat>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ui:repeat>
+                                        </div>
+                                        <h:panelGroup rendered="#{vajeZaGlavniDel.vadbeZaGlavniDel.size() == 0}">
+                                            <p class="lead text-center">Ni vadb za glavni del treninga.</p>
+                                        </h:panelGroup>
+                                        <!-- OHLAJANJE -->
+                                        <h:panelGroup rendered="#{vajeZaOhlajanje.vadbeZaOhlajanje.size() > 0}">
+                                            <h3 class="h3-text-border text-center" style="margin-bottom: 10px;">Vadbe za ohlajanje</h3>
+                                        </h:panelGroup>
+                                        <div class="row">
+                                            <ui:repeat value="#{vajeZaOhlajanje.vadbeZaOhlajanje}" var="postavka">
+                                                #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(postavka.tkIdVadba.idVadba)}
+                                                <div class="col-md-12">
+                                                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                        <div class="card-body d-flex flex-column align-items-start">
+                                                            <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
+                                                            <h3 class="mb-0">
+                                                                <h:link outcome="posameznaPostavkaVadba" styleClass="text-dark" value="#{postavka.tkIdVadba.naziv}">
+                                                                    <f:param name="idPostavka" value="#{postavka.idPostavka}" />
+                                                                </h:link>
+                                                            </h3>
+                                                            <div class="mb-1 text-muted">Tip vadbe:
+                                                                <span class="text-custom">
+                                                                    <h:panelGroup rendered="#{postavka.tkIdVadba.tipVadbe == 0}">
+                                                                        Posamična <i class='fas fa-user text-muted' />
+                                                                    </h:panelGroup>
+                                                                    <h:panelGroup rendered="#{postavka.tkIdVadba.tipVadbe == 1}">
+                                                                        Skupinska <i class='fas fa-users text-muted' />
+                                                                    </h:panelGroup>
+                                                                </span>
+                                                            </div>
+                                                            <p class="card-text mb-auto">#{postavka.tkIdVadba.opis}</p>
+                                                            <p class="card-text mb-auto text-danger">
+                                                                <ui:repeat value="#{vrniZnackeZaVadboBean.znackeZaVadbo}" var="znacka">
+                                                                    ##{znacka.naziv}
+                                                                </ui:repeat>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ui:repeat>
+                                        </div>
+                                        <h:panelGroup rendered="#{vajeZaOhlajanje.vadbeZaOhlajanje.size() == 0}">
+                                            <p class="lead text-center">Ni vadb za ohlajanje.</p>
+                                        </h:panelGroup>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ui:repeat>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{vrniVseDneveZaProgram.dneviZaProgram.size() == 0}">
+                    <div class="row">
+                        <div class="text-center">
+                            <p class="lead">Program s takšnim ID-jem nima dodanih dnevov ali pa ne obstaja.</p>
+                        </div>
                     </div>
-                </section>
-            </f:view>
-        </ui:define>
-    </ui:composition>
+                </h:panelGroup>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function goToSection(target) {
+            if(target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        }
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 </h:body>
 </html>

@@ -86,36 +86,83 @@
     </div>
 
     <f:metadata>
-        <f:viewParam name="idVadba" value="#{podrobnostiVadbe.idIzbraneVadbe}" />
+        <f:viewParam name="idPostavka" value="#{podrobnostiPostavekBean.idIzbranePostavke}" />
     </f:metadata>
 
     <section id="posameznaVadba" class="py-lg-5">
         <div class="container">
             <div class="zamik-lg">
                 <div class="row">
-                    <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba != null}">
-                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(podrobnostiVadbe.izbranaVadba.idVadba)}
+                    <h:panelGroup rendered="#{podrobnostiPostavekBean.izbranaPostavka != null}">
+                        #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(podrobnostiPostavekBean.izbranaPostavka.tkIdVadba.idVadba)}
                         <div class="col-12">
                             <div class="card mb-4 box-shadow">
-                                <p:graphicImage styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
-                                    <f:param name="idVadba" value="#{podrobnostiVadbe.izbranaVadba.idVadba}" />
+                                <p:graphicImage styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiPostavekBean.slika}">
+                                    <f:param name="idVadbaPostavke" value="#{podrobnostiPostavekBean.izbranaPostavka.tkIdVadba.idVadba}" />
                                 </p:graphicImage>
                                 <div class="card-header">
-                                    <h2 class="h3-text-border">#{podrobnostiVadbe.izbranaVadba.naziv}</h2>
+                                    <small class="text-dark">${podrobnostiPostavekBean.izbranaPostavka.tkIdDan.naziv}</small>
+                                    <h2 class="h3-text-border">
+                                        #{podrobnostiPostavekBean.izbranaPostavka.tkIdVadba.naziv}
+                                        <span class="text-dark">-
+                                            <h:panelGroup rendered="#{podrobnostiPostavekBean.izbranaPostavka.tipPostavke == 0}">
+                                                Ogrevanje
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{podrobnostiPostavekBean.izbranaPostavka.tipPostavke == 1}">
+                                                Glavna vadba
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{podrobnostiPostavekBean.izbranaPostavka.tipPostavke == 2}">
+                                                Ohlajanje
+                                            </h:panelGroup>
+                                        </span>
+                                    </h2>
                                 </div>
                                 <div class="card-body">
-                                    <p class="lead card-text">#{podrobnostiVadbe.izbranaVadba.opis}</p>
+                                    <p class="lead card-text text-center">#{podrobnostiPostavekBean.izbranaPostavka.tkIdVadba.opis}</p>
+                                    <hr/>
+                                    <div class="align-content-center align-items-center">
+                                        <div class="row">
+                                            <div class="col-lg-3 text-center">
+                                                <img class="rounded-circle" src="images/postavka/tezavnost.png" alt="Generic placeholder image" width="64" height="64" />
+                                                <h4 class="h3-text-border">Težavnost</h4>
+                                                <p class="lead">1 - <span class="text-custom font-weight-bold">${podrobnostiPostavekBean.izbranaPostavka.tezavnost}</span> - 10</p>
+                                            </div>
+                                            <div class="col-lg-3 text-center">
+                                                <img class="rounded-circle" src="images/postavka/teza.png" alt="Generic placeholder image" width="64" height="64" />
+                                                <h4 class="h3-text-border">Teža</h4>
+                                                <p class="lead">
+                                                    <h:panelGroup rendered="${podrobnostiPostavekBean.izbranaPostavka.teza == 0}">
+                                                        Lastna teža
+                                                    </h:panelGroup>
+                                                    <h:panelGroup rendered="${podrobnostiPostavekBean.izbranaPostavka.teza > 0}">
+                                                        ${podrobnostiPostavekBean.izbranaPostavka.teza} <span class="text-custom">kg</span>
+                                                    </h:panelGroup>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-3 text-center">
+                                                <img class="rounded-circle" src="images/postavka/serije.png" alt="Generic placeholder image" width="64" height="64" />
+                                                <h4 class="h3-text-border">Serije</h4>
+                                                <p class="lead">${podrobnostiPostavekBean.izbranaPostavka.steviloSerij} <span class="text-custom">x</span> ${podrobnostiPostavekBean.izbranaPostavka.steviloPonovitev}</p>
+                                            </div>
+                                            <div class="col-lg-3 text-center">
+                                                <img class="rounded-circle" src="images/postavka/cas.png" alt="Generic placeholder image" width="64" height="64" />
+                                                <h4 class="h3-text-border">Čas</h4>
+                                                <p class="lead">${podrobnostiPostavekBean.izbranaPostavka.trajanje} <span class="text-custom">min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr/>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#videoModal">Video posnetek</button>
-                                            <a class="btn btn-sm btn-outline-danger" href="index.xhtml#telo">Nazaj</a>
+                                            <h:link class="btn btn-sm btn-outline-danger" outcome="dneviPrograma" value="Nazaj" />
                                         </div>
                                         <span></span>
                                         <small class="text-muted">
-                                            <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba.tipVadbe == 0}">
+                                            <h:panelGroup rendered="#{podrobnostiPostavekBean.izbranaPostavka.tkIdVadba.tipVadbe == 0}">
                                                 Posamična vadba <i class='fas fa-user text-custom' />
                                             </h:panelGroup>
-                                            <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba.tipVadbe == 1}">
+                                            <h:panelGroup rendered="#{podrobnostiPostavekBean.izbranaPostavka.tkIdVadba.tipVadbe == 1}">
                                                 Skupinska vadba <i class='fas fa-users text-custom' />
                                             </h:panelGroup>
                                         </small>
@@ -140,7 +187,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/#{podrobnostiVadbe.izbranaVadba.video}"></iframe>
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/#{podrobnostiPostavekBean.izbranaPostavka.tkIdVadba.video}"></iframe>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -150,7 +197,7 @@
                             </div>
                         </div>
                     </h:panelGroup>
-                    <h:panelGroup rendered="#{podrobnostiVadbe.izbranaVadba == null}">
+                    <h:panelGroup rendered="#{podrobnostiPostavekBean.izbranaPostavka == null}">
                         <div class="col-12">
                             <p class="lead text-center">Vadba s takšnim <span style="color: #FF4136;">ID</span>-jem ne obstaja!</p>
                         </div>
