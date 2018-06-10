@@ -24,17 +24,22 @@ public class LineChartBean {
 
     @Getter
     @Setter
+    private String emailOsebe;
+
+    @Getter
+    @Setter
     private List<Meritev> meritveOsebeList;
 
     private LineChartModel lineChartModel;
 
     @PostConstruct
-    public void init() {
+    public void init(String email) {
+        emailOsebe = email;
         createLineModel();
     }
 
     private void createLineModel() {
-        meritveOsebeList = ejbMeritev.vrniMeritvePoId(6);
+        meritveOsebeList = ejbMeritev.vrniMeritvePoEmail(emailOsebe);
 
         lineChartModel = new LineChartModel();
         LineChartSeries lineChartSeriesTeza = new LineChartSeries();
