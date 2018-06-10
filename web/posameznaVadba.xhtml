@@ -26,7 +26,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.xhtml"><img src="icon/dumbbell-32.png"/></a>
+            <a class="navbar-brand" href="#domov" onclick="goToSection($(this.getAttribute('href')));"><img src="icon/dumbbell-32.png"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,9 +41,20 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.xhtml#telo" onclick="goToSection($(this.getAttribute('href')));">Vadbe</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="index.xhtml#programi" onclick="goToSection($(this.getAttribute('href')));">Programi</a>
-                    </li>
+                    <h:panelGrid columns="2" rendered="#{not empty profileBean.profile}">
+                        <h:panelGroup rendered="#{profileBean.aliJeOsebaVclanjena(profileBean.profile.email)}">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="index.xhtml#programi" onclick="goToSection($(this.getAttribute('href')));">Programi</a>
+                            </li>
+                        </h:panelGroup>
+                    </h:panelGrid>
+                    <h:panelGrid columns="2" rendered="#{not empty profileBean.profile}">
+                        <h:panelGroup rendered="#{profileBean.aliJeOsebaVclanjena(profileBean.profile.email)}">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="index.xhtml#meritve" onclick="goToSection($(this.getAttribute('href')));">Meritve</a>
+                            </li>
+                        </h:panelGroup>
+                    </h:panelGrid>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.xhtml#map" onclick="goToSection($(this.getAttribute('href')));">Zemljevid</a>
                     </li>
@@ -51,14 +62,19 @@
                         <a class="nav-link text-light" href="index.xhtml#kontakt" onclick="goToSection($(this.getAttribute('href')));">Kontakt</a>
                     </li>
                     <li class="nav-item" style="margin-left: 10px;">
-                        <button type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-outline-primary text-light" style="width: 100%;">Prijava</button>
+                        <h:panelGrid columns="2" rendered="#{empty profileBean.profile}">
+                            <button type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-outline-primary text-light" style="width: 100%;">Prijava</button>
+                        </h:panelGrid>
+                        <h:panelGrid columns="2" rendered="#{not empty profileBean.profile}">
+                            <button type="button" data-toggle="modal" data-target="#logoutModal" class="btn btn-outline-primary text-light" style="width: 100%;">Odjava</button>
+                        </h:panelGrid>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Modal -->
+    <!-- Modal Login -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -67,14 +83,51 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-primary-fb" style="width: 100%;"><i class="fab fa-2x fa-facebook" /></button>
+                        <div class="col-12" align="center">
+                            <h:form id="loginform" styleClass="form-horizontal">
+                                <h:panelGroup rendered="#{empty profileBean.profile}">
+                                    <h:commandButton id="btnFb" action="#{profileBean.connectToFB()}"
+                                                     rendered="#{empty profileBean.profile}" style="display: none"/>
+                                    <button class="btn btn-primary-fb" id="loginform:btnFb" name="loginform:btnFb" style="width: 100%;"><i class="fab fa-facebook" /> Prijava s Facebook računom</button>
+                                </h:panelGroup>
+                            </h:form>
                         </div>
                     </div>
                     <hr />
                     <div class="row">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-danger" style="width: 100%;"><i class="fab fa-2x fa-google-plus" /></button>
+                        <div class="col-12" align="center">
+                            <button disabled="" type="button" class="btn btn-danger" style="width: 100%;"><i class="fab fa-google-plus-square" /> Prijava s Google+ računom</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Logout -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalTitle">Odjava</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12" align="center">
+                            <h:form id="odjavaForm" styleClass="form-horizontal">
+                                <h:panelGroup rendered="#{not empty profileBean.profile}">
+                                    <h:graphicImage value="#{profileBean.profile.profileImageURL}"
+                                                    styleClass="media-object rounded border"/>
+                                    <h3 class="lead" style="margin-left: 10px;">#{profileBean.profile.fullName}</h3>
+                                    <h3 class="lead" style="margin-left: 10px;">#{profileBean.profile.email}</h3>
+                                    <hr/>
+                                    <h:commandButton id="btnFbOdjava" action="#{profileBean.logout()}"
+                                                     rendered="#{not empty profileBean.profile}" style="display: none"/>
+                                    <button class="btn btn-primary-fb" id="odjavaForm:btnFbOdjava" name="odjavaForm:btnFbOdjava" style="width: 100%;"><i class="fab fa-facebook" /> Odjava</button>
+                                </h:panelGroup>
+                            </h:form>
                         </div>
                     </div>
                 </div>

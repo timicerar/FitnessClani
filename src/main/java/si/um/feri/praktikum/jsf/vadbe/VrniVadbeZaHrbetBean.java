@@ -28,4 +28,5 @@ public class VrniVadbeZaHrbetBean {
 
         return vadbeZaHrbet;
     }
+
 }

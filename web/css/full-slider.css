@@ -123,3 +123,7 @@
     flex: 1 1 auto;
     padding: 1.25rem;
 }
+
+.border-custom {
+    border: 1px solid #ff8c4f !important;
+}

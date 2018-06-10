@@ -27,6 +27,10 @@ public class EJBOseba {
         return entityManager.find(Oseba.class, idOseba);
     }
 
+    public Oseba osebByEmail(String email) {
+        return (Oseba) entityManager.createQuery("SELECT o FROM Oseba o WHERE o.email = '" + email + "'").getSingleResult();
+    }
+
     public void addOseba(Oseba o) {
         entityManager.persist(o);
     }
@@ -63,5 +67,9 @@ public class EJBOseba {
 
     public boolean validateEmail(String email) {
         return entityManager.createQuery("SELECT o FROM Oseba o WHERE o.email = '" + email + "'").getResultList().size() == 0;
+    }
+
+    public boolean aliJeOsebaVclanjena(String email) {
+        return entityManager.createQuery("SELECT o FROM Oseba o WHERE o.email = '" + email + "'").getResultList().size() > 0;
     }
 }
