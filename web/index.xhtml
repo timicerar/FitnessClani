@@ -79,6 +79,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="loginModalTitle">Prijava v sistem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&#215;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -111,6 +114,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="logoutModalTitle">Odjava</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&#215;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -271,6 +277,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="naslovRoke">Vadbe za roke</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&#215;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -327,6 +334,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="naslovNoge">Vadbe za noge</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&#215;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -383,6 +391,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="naslovPrsa">Vadbe za prsa</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&#215;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -439,6 +448,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="naslovTrebusne">Vadbe za trebušne mišice</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&#215;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -495,6 +505,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="naslovHrbet">Vadbe za hrbtne mišice</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&#215;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -551,6 +562,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="naslovRit">Vadbe za zadnjico</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&#215;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -633,6 +645,53 @@
                                                 <f:param name="idProgram" value="#{program.idProgram}" />
                                             </h:link>
                                         </div>
+                                        <div class="card-footer" align="center">
+                                            <h:form>
+                                                <h:panelGroup rendered="#{!osebaBean.aliJeOsebaPrijavljenaNaProgram(profileBean.profile.email)}">
+                                                    <div class="py-1">
+                                                        <button type="button" class="btn btn-primary" style="width: 200px;" data-toggle="modal" data-target="#prijavaProgram#{program.idProgram}">Prijava na program</button>
+
+                                                        <!-- Modal prijava na program -->
+                                                        <div class="modal fade" id="prijavaProgram#{program.idProgram}" tabindex="-1" role="dialog" aria-labelledby="prijavaProgramLabel" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="prijavaProgramName">Prijava na program '#{program.naziv}'</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&#215;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Ste prepričani, da se želite prijaviti na ta program? Izvajate lahko samo eden program na enkrat.
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ne</button>
+                                                                        <h:commandButton value="Da" styleClass="btn btn-primary" actionListener="#{osebaBean.prijavaNaProgram(profileBean.profile.email, program.idProgram)}" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </h:panelGroup>
+                                                <h:panelGroup rendered="#{osebaBean.aliJeOsebaPrijavljenaNaProgram(profileBean.profile.email) and !osebaBean.pokaziGumb(profileBean.profile.email, program.idProgram)}">
+                                                    <div class="py-1">
+                                                        <h:commandButton value="Prijava na programa" styleClass="btn btn-primary" style="width: 200px;" title="Na enkrat lahko izvajate samo eden program." disabled="true" />
+                                                    </div>
+                                                </h:panelGroup>
+                                                <h:panelGroup rendered="#{osebaBean.pokaziGumb(profileBean.profile.email, program.idProgram)}">
+                                                    <h:panelGroup rendered="#{osebaBean.aliJeOsebaZakljucilaVseDneve(profileBean.profile.email, program.idProgram)}">
+                                                        <div class="py-1">
+                                                            <h:commandButton value="Zakjuči program" styleClass="btn btn-primary-fb" style="width: 200px;" actionListener="#{osebaBean.zakljuciProgram(profileBean.profile.email, program.idProgram)}" />
+                                                        </div>
+                                                    </h:panelGroup>
+                                                    <h:panelGroup rendered="#{!osebaBean.aliJeOsebaZakljucilaVseDneve(profileBean.profile.email, program.idProgram)}">
+                                                        <div class="py-1">
+                                                            <h:commandButton value="Zakjuči program" styleClass="btn btn-primary-fb" style="width: 200px;" title="Če želite zaključiti program morate končati vse dneve v programu." disabled="true" />
+                                                        </div>
+                                                    </h:panelGroup>
+                                                </h:panelGroup>
+                                            </h:form>
+                                        </div>
                                     </div>
                                 </div>
                             </ui:repeat>
@@ -699,6 +758,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="meritevNaslov">Dodaj novo meritev</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&#215;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
@@ -746,6 +806,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="pregledMeritevLabel">Pregled vseh dodanih meritev</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&#215;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
@@ -774,6 +835,7 @@
                                                                     <div class="modal-header">
                                                                         <h5 class="modal-title">Potrditev izbrisa izbrane meritve</h5>
                                                                         <button type="button" class="close" onclick="$('#izbrisi#{meritev.idMeritev}').modal('toggle');" aria-label="Close">
+                                                                            <span aria-hidden="true">&#215;</span>
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">

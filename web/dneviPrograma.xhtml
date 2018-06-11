@@ -80,6 +80,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="loginModalTitle">Prijava v sistem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&#215;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -112,6 +115,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="logoutModalTitle">Odjava</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&#215;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -160,9 +166,58 @@
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div>
                                                         <button type="button" data-toggle="modal" data-target="#vadbe#{dan.idDan}" class="btn btn-sm btn-outline-primary">Vadbe</button>
-                                                        <button type="button" class="btn btn-sm btn-outline-secondary">Končaj dan</button>
+                                                        <h:panelGroup rendered="#{osebaBean.pokaziGumb(profileBean.profile.email, vrniVseDneveZaProgram.idIzbranegaPrograma)}">
+                                                            <h:panelGroup>
+                                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#prijavaProgram#{dan.idDan}">Končaj dan</button>
+
+                                                                <!-- Modal koncaj dan -->
+                                                                <div class="modal fade" id="prijavaProgram#{dan.idDan}" tabindex="-1" role="dialog" aria-labelledby="prijavaProgramLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                        <div class="modal-content modal-lg">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="prijavaProgramName">Končaj '#{dan.naziv}'</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&#215;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body" align="center">
+                                                                                <p class="lead">Počutje po treningu:</p>
+                                                                                <h:form id="koncajDan#{dan.idDan}">
+                                                                                    <p:selectOneRadio id="pocutje" onchange="alert(this.value)" value="#{izvedbaBean.izvedbaDneva.pocutje}" layout="custom" required="true" requiredMessage="Izberite počutje!">
+                                                                                        <f:selectItem itemValue="0" />
+                                                                                        <f:selectItem itemValue="1" />
+                                                                                        <f:selectItem itemValue="2" />
+                                                                                        <f:selectItem itemValue="3" />
+                                                                                        <f:selectItem itemValue="4" />
+                                                                                    </p:selectOneRadio>
+
+                                                                                    <h:panelGrid columns="10" cellpadding="5">
+                                                                                        <p:radioButton id="opt1"  for="pocutje" itemIndex="0" />
+                                                                                        <h:graphicImage for="opt1" value="/images/pocutje/zelo-slabo.png" />
+
+                                                                                        <p:radioButton id="opt2" for="pocutje" itemIndex="1" />
+                                                                                        <h:graphicImage for="opt2" value="/images/pocutje/slabo.png" />
+
+                                                                                        <p:radioButton id="opt3" for="pocutje" itemIndex="2" />
+                                                                                        <h:graphicImage for="opt3" value="/images/pocutje/povprecno.png" />
+
+                                                                                        <p:radioButton id="opt4" for="pocutje" itemIndex="3" />
+                                                                                        <h:graphicImage for="opt4" value="/images/pocutje/dobro.png" />
+
+                                                                                        <p:radioButton id="opt5" for="pocutje" itemIndex="4" />
+                                                                                        <h:graphicImage for="opt4" value="/images/pocutje/odlicno.png" />
+                                                                                    </h:panelGrid>
+
+                                                                                    <p:commandButton type="submit" actionListener="#{izvedbaBean.zakljuciDan(profileBean.profile.email, dan.idDan)}" style="width: 100%; margin-top: 10px; background: #FF851B; border: 1px solid #FF851B;" value="Končaj dan" />
+                                                                                </h:form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </h:panelGroup>
+                                                        </h:panelGroup>
                                                     </div>
-                                                    <small class="text-muted"><i class="far fa-lg fa-calendar text-muted" /> <i class="far fa-lg fa-calendar-check text-success" /></small>
+                                                    <small class="text-muted"><h:panelGroup><i class="far fa-lg fa-calendar text-muted" /></h:panelGroup><h:panelGroup><i class="far fa-lg fa-calendar-check text-success" /></h:panelGroup></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -175,6 +230,7 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="naslovVadbe">Vadbe za #{dan.naziv}</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&#215;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
