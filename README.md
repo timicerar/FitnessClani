@@ -7,8 +7,9 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 >Program je povezan s [fitnes programom za receptorje in trenerje](https://github.com/timicerar/FitnessUrejanje). Programa uporabljata isto podatkovno bazo in sta namenjena, kot dopolnilo drug drugemu.
 
 ## Pogled člana fitnesa
+<p align="center">
 
-![35191401_1679849068777583_5968886226445402112_n](https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png)
+ <img src="https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png" alt="Sublime's custom image"/>
 
 ![35102779_1679849898777500_2632340843893096448_n](https://user-images.githubusercontent.com/23579188/41303784-8d5cf108-6e6e-11e8-928b-f2955735aecf.png)
 
@@ -19,7 +20,7 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 ![35227928_1679852258777264_2301934477305184256_n](https://user-images.githubusercontent.com/23579188/41303961-0b926a3a-6e6f-11e8-8065-6a195f5e693f.png)
 
 ![35102526_1679852892110534_7375671101751296000_n](https://user-images.githubusercontent.com/23579188/41303980-1af58b42-6e6f-11e8-88b8-f2c75b04b064.png)
-
+</p>
 ## Vsebina
 * [Uporaba](#uporaba)
 * [Funkcionalnosti](#funkcionalnosti)
@@ -41,7 +42,7 @@ Aplikacija omogoča:
 * Dodajanje/urejanje/brisanje vadb katerim lahko dodaš postavke (čas trajanja treninga, težo itd.) ko jih dodaš dnevu v programu.
 * Dodajanje/urejanje/brisanje programov in dnevov programa
 * Dodajanje meritev
-* Prijava na program, zaključevanje dnevov v programu, program lahko zaključiš kadar končaš vse dneve programa
+* Prijava na program, zaključevanje dnevov v programu, program lahko zaključiš kadar končaš vse dneve programaq
 * Pregled vseh vadb / programov / članov
 
 ## Vzpostavitev
