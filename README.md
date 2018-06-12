@@ -6,6 +6,12 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 
 >Program je povezan s [fitnes programom za receptorje in trenerje](https://github.com/timicerar/FitnessUrejanje). Programa uporabljata isto podatkovno bazo in sta namenjena, kot dopolnilo drug drugemu.
 
+## Pogled člana fitnesa
+![35191401_1679849068777583_5968886226445402112_n](https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png)
+
+![35102779_1679849898777500_2632340843893096448_n](https://user-images.githubusercontent.com/23579188/41303784-8d5cf108-6e6e-11e8-928b-f2955735aecf.png)
+
+
 ## Vsebina
 * [Uporaba](#uporaba)
 * [Funkcionalnosti](#funkcionalnosti)
@@ -42,7 +48,7 @@ Za vpostavitev aplikacije si je potrebno namestiti:
     * Administrativnega uporabnika (user)
     * Aplikacijska uporabnika (trener in receptor)
   * JMS modul (ActiveMQ)
-    * Potrebno je dodati sporočilo vrsto (jms/queue/test) in temo (jms/topic/test)
+    * Potrebno je dodati sporočilno vrsto (jms/queue/test) in temo (jms/topic/test)
 
 #### Postopek kako klonirati projetk iz GitHuba v Intellij IDEA
 1. Kliknite na "Check out from version control" in izberite "Git"
