@@ -9,17 +9,16 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 ## Pogled člana fitnesa
 <p align="center">
 
- <img src="https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png" alt="Sublime's custom image"/>
+<img src="https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png" alt="Slika"/>
 
-![35102779_1679849898777500_2632340843893096448_n](https://user-images.githubusercontent.com/23579188/41303784-8d5cf108-6e6e-11e8-928b-f2955735aecf.png)
+<img src="https://user-images.githubusercontent.com/23579188/41303784-8d5cf108-6e6e-11e8-928b-f2955735aecf.png" alt="Slika"/>
 
-![35148105_1679850955444061_236271214719401984_n](https://user-images.githubusercontent.com/23579188/41303924-ee6aa418-6e6e-11e8-8cf5-eed4c0de21ba.png)
+<img src="https://user-images.githubusercontent.com/23579188/41303924-ee6aa418-6e6e-11e8-8cf5-eed4c0de21ba.png" alt="Slika"/>
 
-![35086715_1679850542110769_4030940903102218240_n](https://user-images.githubusercontent.com/23579188/41303936-f5849dc6-6e6e-11e8-8ebd-ba4973cf9fab.png)
+<img src="https://user-images.githubusercontent.com/23579188/41303936-f5849dc6-6e6e-11e8-8ebd-ba4973cf9fab.png" alt="Slika"/>
 
-![35227928_1679852258777264_2301934477305184256_n](https://user-images.githubusercontent.com/23579188/41303961-0b926a3a-6e6f-11e8-8065-6a195f5e693f.png)
+<img src="https://user-images.githubusercontent.com/23579188/41303980-1af58b42-6e6f-11e8-88b8-f2c75b04b064.png" alt="Slika"/>
 
-![35102526_1679852892110534_7375671101751296000_n](https://user-images.githubusercontent.com/23579188/41303980-1af58b42-6e6f-11e8-88b8-f2c75b04b064.png)
 </p>
 
 ## Vsebina
