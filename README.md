@@ -8,17 +8,17 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 
 ## Pogled člana fitnesa
 <p align="center">
-
 <img src="https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png" alt="Slika"/>
-
+<br/>
 <img src="https://user-images.githubusercontent.com/23579188/41303784-8d5cf108-6e6e-11e8-928b-f2955735aecf.png" alt="Slika"/>
-
+<br/>
 <img src="https://user-images.githubusercontent.com/23579188/41303924-ee6aa418-6e6e-11e8-8cf5-eed4c0de21ba.png" alt="Slika"/>
-
+<br/>
 <img src="https://user-images.githubusercontent.com/23579188/41303936-f5849dc6-6e6e-11e8-8ebd-ba4973cf9fab.png" alt="Slika"/>
-
+<br/>
+<img src="https://user-images.githubusercontent.com/23579188/41303961-0b926a3a-6e6f-11e8-8065-6a195f5e693f.png" alt="Slika"/>
+<br/>
 <img src="https://user-images.githubusercontent.com/23579188/41303980-1af58b42-6e6f-11e8-88b8-f2c75b04b064.png" alt="Slika"/>
-
 </p>
 
 ## Vsebina
