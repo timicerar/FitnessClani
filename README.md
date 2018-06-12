@@ -8,7 +8,7 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 
 ## Pogled člana fitnesa
 
-<span style="display:block;text-align:center">![35191401_1679849068777583_5968886226445402112_n](https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png)
+![35191401_1679849068777583_5968886226445402112_n](https://user-images.githubusercontent.com/23579188/41303774-88efba1a-6e6e-11e8-9123-48ffc4cb3358.png)
 
 ![35102779_1679849898777500_2632340843893096448_n](https://user-images.githubusercontent.com/23579188/41303784-8d5cf108-6e6e-11e8-928b-f2955735aecf.png)
 
