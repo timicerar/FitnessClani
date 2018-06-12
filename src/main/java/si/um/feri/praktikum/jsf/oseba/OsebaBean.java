@@ -1,7 +1,5 @@
 package si.um.feri.praktikum.jsf.oseba;
 
-import lombok.Getter;
-import lombok.Setter;
 import si.um.feri.praktikum.ejb.EJBDan;
 import si.um.feri.praktikum.ejb.EJBIzvedba;
 import si.um.feri.praktikum.ejb.EJBOseba;
@@ -35,7 +33,7 @@ public class OsebaBean {
     private EJBIzvedba ejbIzvedba;
 
     public void prijavaNaProgram(String emailOsebe, int idProgram) throws JMSException, NamingException {
-        Oseba oseba = ejbOseba.osebByEmail(emailOsebe);
+        Oseba oseba = ejbOseba.osebaByEmail(emailOsebe);
         Program program = ejbProgram.programById(idProgram);
 
         oseba.getTkIdProgram().add(program);
@@ -54,7 +52,7 @@ public class OsebaBean {
     }
 
     public void zakljuciProgram(String emailOsebe, int idProgram) throws JMSException, NamingException {
-        Oseba oseba = ejbOseba.osebByEmail(emailOsebe);
+        Oseba oseba = ejbOseba.osebaByEmail(emailOsebe);
         Program program = ejbProgram.programById(idProgram);
 
         List<Izvedba> izvedbeOsebe = ejbIzvedba.vrniVseIzvedbeOsebe(oseba.getIdOseba());
@@ -79,11 +77,11 @@ public class OsebaBean {
     }
 
     public boolean aliJeOsebaPrijavljenaNaProgram(String email) {
-        return ejbOseba.osebByEmail(email).getTkIdProgram().size() > 0;
+        return ejbOseba.osebaByEmail(email).getTkIdProgram().size() > 0;
     }
 
     public boolean pokaziGumb(String email, int idProgram) {
-        Oseba oseba = ejbOseba.osebByEmail(email);
+        Oseba oseba = ejbOseba.osebaByEmail(email);
 
         for (int i = 0; i < oseba.getTkIdProgram().size(); i++) {
             if (oseba.getTkIdProgram().get(i).getIdProgram() == idProgram) {
@@ -95,11 +93,25 @@ public class OsebaBean {
     }
 
     public boolean aliJeOsebaZakljucilaVseDneve(String email, int idProgram) {
-        Oseba oseba = ejbOseba.osebByEmail(email);
+        Oseba oseba = ejbOseba.osebaByEmail(email);
         List<Izvedba> listIzvedbOsebe = ejbIzvedba.vrniVseIzvedbeOsebe(oseba.getIdOseba());
         List<Dan> listDnevovVProgramu = ejbDan.vrniVseDnevePrograma(idProgram);
 
         return listIzvedbOsebe.size() == listDnevovVProgramu.size();
+    }
+
+    public boolean jeDanZakljucen(String email, int idDan) {
+        Oseba oseba = ejbOseba.osebaByEmail(email);
+        Dan dan = ejbDan.danById(idDan);
+        List<Izvedba> listIzvedbOsebe = ejbIzvedba.vrniVseIzvedbeOsebe(oseba.getIdOseba());
+
+        for (Izvedba trIzvedba : listIzvedbOsebe) {
+            if (trIzvedba.getTkIdOseba().getIdOseba() == oseba.getIdOseba() && trIzvedba.getTkIdDan().getIdDan() == dan.getIdDan()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }

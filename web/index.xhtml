@@ -62,10 +62,10 @@
                     </li>
                     <li class="nav-item" style="margin-left: 10px;">
                         <h:panelGrid columns="2" rendered="#{empty profileBean.profile}">
-                            <button type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-outline-primary text-light" style="width: 100%;">Prijava</button>
+                            <button type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-outline-primary text-light">Prijava</button>
                         </h:panelGrid>
                         <h:panelGrid columns="2" rendered="#{not empty profileBean.profile}">
-                            <button type="button" data-toggle="modal" data-target="#logoutModal" class="btn btn-outline-primary text-light" style="width: 100%;">Odjava</button>
+                            <button type="button" data-toggle="modal" data-target="#logoutModal" class="btn btn-outline-primary text-light">Odjava</button>
                         </h:panelGrid>
                     </li>
                 </ul>
@@ -286,7 +286,12 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                    <div class="card-header">
+                                                        <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                            <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                        </p:graphicImage>
+                                                    </div>
+                                                    <div class="card-body d-flex flex-column align-items-start" align="left">
                                                         <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                         <h3 class="mb-0">
                                                             <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
@@ -343,7 +348,12 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                    <div class="card-header">
+                                                        <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                            <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                        </p:graphicImage>
+                                                    </div>
+                                                    <div class="card-body d-flex flex-column align-items-start" align="left">
                                                         <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                         <h3 class="mb-0">
                                                             <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
@@ -400,7 +410,12 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                    <div class="card-header">
+                                                        <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                            <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                        </p:graphicImage>
+                                                    </div>
+                                                    <div class="card-body d-flex flex-column align-items-start" align="left">
                                                         <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                         <h3 class="mb-0">
                                                             <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
@@ -457,7 +472,12 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                    <div class="card-header">
+                                                        <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                            <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                        </p:graphicImage>
+                                                    </div>
+                                                    <div class="card-body d-flex flex-column align-items-start" align="left">
                                                         <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                         <h3 class="mb-0">
                                                             <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
@@ -514,7 +534,12 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                    <div class="card-header">
+                                                        <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                            <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                        </p:graphicImage>
+                                                    </div>
+                                                    <div class="card-body d-flex flex-column align-items-start" align="left">
                                                         <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                         <h3 class="mb-0">
                                                             <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">
@@ -571,7 +596,12 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                                                    <div class="card-body d-flex flex-column align-items-start">
+                                                    <div class="card-header">
+                                                        <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                            <f:param name="idVadba" value="#{vadba.idVadba}" />
+                                                        </p:graphicImage>
+                                                    </div>
+                                                    <div class="card-body d-flex flex-column align-items-start" align="left">
                                                         <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                         <h3 class="mb-0">
                                                             <h:link outcome="posameznaVadba" styleClass="text-dark" value="#{vadba.naziv}">

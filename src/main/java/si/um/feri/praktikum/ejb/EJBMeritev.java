@@ -61,7 +61,7 @@ public class EJBMeritev {
     }
 
     public boolean jeOsebaDanesZeVpisalaMeritev(String email) throws ParseException {
-        Oseba oseba = ejbOseba.osebByEmail(email);
+        Oseba oseba = ejbOseba.osebaByEmail(email);
 
         if (vrniMeritvePoId(oseba.getIdOseba()).size() > 0) {
             Meritev zadnjaMeritev = vrniZadnjoMeritev(oseba.getIdOseba());

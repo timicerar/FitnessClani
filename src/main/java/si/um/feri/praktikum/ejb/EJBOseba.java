@@ -27,7 +27,7 @@ public class EJBOseba {
         return entityManager.find(Oseba.class, idOseba);
     }
 
-    public Oseba osebByEmail(String email) {
+    public Oseba osebaByEmail(String email) {
         return (Oseba) entityManager.createQuery("SELECT o FROM Oseba o WHERE o.email = '" + email + "'").getSingleResult();
     }
 

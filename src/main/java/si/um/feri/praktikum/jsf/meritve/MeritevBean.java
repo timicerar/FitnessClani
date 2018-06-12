@@ -36,7 +36,7 @@ public class MeritevBean {
     private EJBOseba ejbOseba;
 
     public void dodajMeritev(String email) {
-        Oseba oseba = ejbOseba.osebByEmail(email);
+        Oseba oseba = ejbOseba.osebaByEmail(email);
         novaMeritev.setTeza(Double.parseDouble(teza));
         novaMeritev.setVisina(Double.parseDouble(visina));
         novaMeritev.setObsegPasu(Double.parseDouble(obsegPasu));
@@ -50,7 +50,7 @@ public class MeritevBean {
     }
 
     public void nastaviMeritev(String email) {
-        Oseba oseba = ejbOseba.osebByEmail(email);
+        Oseba oseba = ejbOseba.osebaByEmail(email);
 
         if(ejbMeritev.vrniMeritvePoId(oseba.getIdOseba()).size() > 0) {
             Meritev zadnjaMeritev = ejbMeritev.vrniZadnjoMeritev(oseba.getIdOseba());

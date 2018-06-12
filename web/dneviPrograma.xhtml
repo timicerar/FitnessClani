@@ -155,7 +155,9 @@
                     <div class="zamik-lg">
                         <h:panelGroup rendered="#{vrniVseDneveZaProgram.dneviZaProgram != null}">
                             <h1 class="h1-text-border text-center">#{vrniVseDneveZaProgram.izbranProgram.naziv}</h1>
-                            <hr class="hr-naslov" />
+                            <h:panelGroup rendered="#{vrniVseDneveZaProgram.dneviZaProgram.size() != 0}">
+                                <hr class="hr-naslov" />
+                            </h:panelGroup>
                             <ui:repeat value="#{vrniVseDneveZaProgram.dneviZaProgram}" var="dan">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -165,59 +167,19 @@
                                                 <p class="card-text">#{dan.opis}</p>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div>
-                                                        <button type="button" data-toggle="modal" data-target="#vadbe#{dan.idDan}" class="btn btn-sm btn-outline-primary">Vadbe</button>
-                                                        <h:panelGroup rendered="#{osebaBean.pokaziGumb(profileBean.profile.email, vrniVseDneveZaProgram.idIzbranegaPrograma)}">
-                                                            <h:panelGroup>
-                                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#prijavaProgram#{dan.idDan}">Končaj dan</button>
-
-                                                                <!-- Modal koncaj dan -->
-                                                                <div class="modal fade" id="prijavaProgram#{dan.idDan}" tabindex="-1" role="dialog" aria-labelledby="prijavaProgramLabel" aria-hidden="true">
-                                                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                                                        <div class="modal-content modal-lg">
-                                                                            <div class="modal-header">
-                                                                                <h5 class="modal-title" id="prijavaProgramName">Končaj '#{dan.naziv}'</h5>
-                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                    <span aria-hidden="true">&#215;</span>
-                                                                                </button>
-                                                                            </div>
-                                                                            <div class="modal-body" align="center">
-                                                                                <p class="lead">Počutje po treningu:</p>
-                                                                                <h:form id="koncajDan#{dan.idDan}">
-                                                                                    <p:selectOneRadio id="pocutje" onchange="alert(this.value)" value="#{izvedbaBean.izvedbaDneva.pocutje}" layout="custom" required="true" requiredMessage="Izberite počutje!">
-                                                                                        <f:selectItem itemValue="0" />
-                                                                                        <f:selectItem itemValue="1" />
-                                                                                        <f:selectItem itemValue="2" />
-                                                                                        <f:selectItem itemValue="3" />
-                                                                                        <f:selectItem itemValue="4" />
-                                                                                    </p:selectOneRadio>
-
-                                                                                    <h:panelGrid columns="10" cellpadding="5">
-                                                                                        <p:radioButton id="opt1"  for="pocutje" itemIndex="0" />
-                                                                                        <h:graphicImage for="opt1" value="/images/pocutje/zelo-slabo.png" />
-
-                                                                                        <p:radioButton id="opt2" for="pocutje" itemIndex="1" />
-                                                                                        <h:graphicImage for="opt2" value="/images/pocutje/slabo.png" />
-
-                                                                                        <p:radioButton id="opt3" for="pocutje" itemIndex="2" />
-                                                                                        <h:graphicImage for="opt3" value="/images/pocutje/povprecno.png" />
-
-                                                                                        <p:radioButton id="opt4" for="pocutje" itemIndex="3" />
-                                                                                        <h:graphicImage for="opt4" value="/images/pocutje/dobro.png" />
-
-                                                                                        <p:radioButton id="opt5" for="pocutje" itemIndex="4" />
-                                                                                        <h:graphicImage for="opt4" value="/images/pocutje/odlicno.png" />
-                                                                                    </h:panelGrid>
-
-                                                                                    <p:commandButton type="submit" actionListener="#{izvedbaBean.zakljuciDan(profileBean.profile.email, dan.idDan)}" style="width: 100%; margin-top: 10px; background: #FF851B; border: 1px solid #FF851B;" value="Končaj dan" />
-                                                                                </h:form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                        <h:form>
+                                                            <button type="button" data-toggle="modal" data-target="#vadbe#{dan.idDan}" class="btn btn-sm btn-outline-primary">Vadbe</button>
+                                                            <h:panelGroup rendered="#{osebaBean.pokaziGumb(profileBean.profile.email, vrniVseDneveZaProgram.idIzbranegaPrograma)}">
+                                                                <h:panelGroup rendered="#{!osebaBean.jeDanZakljucen(profileBean.profile.email, dan.idDan)}">
+                                                                    <h:button outcome="koncajDan" value="Končaj dan" styleClass="btn btn-sm btn-outline-secondary ml-1">
+                                                                        <f:param name="idDan" value="#{dan.idDan}" />
+                                                                    </h:button>
+                                                                </h:panelGroup>
+                                                                <h:commandButton ajax="false" action="#{pdfBean.download(dan.idDan)}" styleClass="btn btn-sm" id="pdfSave" image="images/pdf/printer-32.png" />
                                                             </h:panelGroup>
-                                                        </h:panelGroup>
+                                                        </h:form>
                                                     </div>
-                                                    <small class="text-muted"><h:panelGroup><i class="far fa-lg fa-calendar text-muted" /></h:panelGroup><h:panelGroup><i class="far fa-lg fa-calendar-check text-success" /></h:panelGroup></small>
+                                                    <small class="text-muted"><h:panelGroup rendered="#{!osebaBean.jeDanZakljucen(profileBean.profile.email, dan.idDan)}"><i class="far fa-lg fa-calendar text-muted" /></h:panelGroup><h:panelGroup rendered="#{osebaBean.jeDanZakljucen(profileBean.profile.email, dan.idDan)}"><i class="far fa-lg fa-calendar-check text-success" /></h:panelGroup></small>
                                                 </div>
                                             </div>
                                         </div>
@@ -240,12 +202,18 @@
                                                 <!-- OGREVANJE -->
                                                 <h:panelGroup rendered="#{vajeZaOgrevanje.vadbeZaOgrevanje.size() > 0}">
                                                     <h3 class="h3-text-border text-center" style="margin-bottom: 10px;">Vadbe za ogrevanje</h3>
+                                                    <br/>
                                                 </h:panelGroup>
                                                 <div class="row">
                                                     <ui:repeat value="#{vajeZaOgrevanje.vadbeZaOgrevanje}" var="postavka">
                                                         #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(postavka.tkIdVadba.idVadba)}
                                                         <div class="col-md-12">
                                                             <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                                <div class="card-header">
+                                                                    <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                                        <f:param name="idVadba" value="#{postavka.tkIdVadba.idVadba}" />
+                                                                    </p:graphicImage>
+                                                                </div>
                                                                 <div class="card-body d-flex flex-column align-items-start">
                                                                     <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                                     <h3 class="mb-0">
@@ -280,12 +248,18 @@
                                                 <!-- GLAVNI DEL -->
                                                 <h:panelGroup rendered="#{vajeZaGlavniDel.vadbeZaGlavniDel.size() > 0}">
                                                     <h3 class="h3-text-border text-center" style="margin-bottom: 10px;">Glavni del treninga</h3>
+                                                    <br/>
                                                 </h:panelGroup>
                                                 <div class="row">
                                                     <ui:repeat value="#{vajeZaGlavniDel.vadbeZaGlavniDel}" var="postavka">
                                                         #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(postavka.tkIdVadba.idVadba)}
                                                         <div class="col-md-12">
                                                             <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                                <div class="card-header">
+                                                                    <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                                        <f:param name="idVadba" value="#{postavka.tkIdVadba.idVadba}" />
+                                                                    </p:graphicImage>
+                                                                </div>
                                                                 <div class="card-body d-flex flex-column align-items-start">
                                                                     <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                                     <h3 class="mb-0">
@@ -320,12 +294,18 @@
                                                 <!-- OHLAJANJE -->
                                                 <h:panelGroup rendered="#{vajeZaOhlajanje.vadbeZaOhlajanje.size() > 0}">
                                                     <h3 class="h3-text-border text-center" style="margin-bottom: 10px;">Vadbe za ohlajanje</h3>
+                                                    <br/>
                                                 </h:panelGroup>
                                                 <div class="row">
                                                     <ui:repeat value="#{vajeZaOhlajanje.vadbeZaOhlajanje}" var="postavka">
                                                         #{vrniZnackeZaVadboBean.vrniZnackeZaVadbo(postavka.tkIdVadba.idVadba)}
                                                         <div class="col-md-12">
                                                             <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                                                <div class="card-header">
+                                                                    <p:graphicImage width="300" height="300" styleClass="img-fluid img-thumbnail rounded" value="#{podrobnostiVadbe.slika}">
+                                                                        <f:param name="idVadba" value="#{postavka.tkIdVadba.idVadba}" />
+                                                                    </p:graphicImage>
+                                                                </div>
                                                                 <div class="card-body d-flex flex-column align-items-start">
                                                                     <strong class="d-inline-block mb-2 text-dark">Vadba</strong>
                                                                     <h3 class="mb-0">
@@ -371,6 +351,13 @@
                                 <div class="text-center">
                                     <p class="lead">Program s takšnim ID-jem nima dodanih dnevov ali pa ne obstaja.</p>
                                 </div>
+                            </div>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{osebaBean.aliJeOsebaZakljucilaVseDneve(profileBean.profile.email, vrniVseDneveZaProgram.idIzbranegaPrograma)}">
+                            <div class="py-1 mb-5" align="center">
+                                <h:form>
+                                    <h:commandButton value="Zakjuči program" styleClass="btn btn-primary-fb" style="width: 100%;" actionListener="#{osebaBean.zakljuciProgram(profileBean.profile.email, vrniVseDneveZaProgram.idIzbranegaPrograma)}" action="index.xhtml" />
+                                </h:form>
                             </div>
                         </h:panelGroup>
                     </div>
