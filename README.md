@@ -21,6 +21,7 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 
 ![35102526_1679852892110534_7375671101751296000_n](https://user-images.githubusercontent.com/23579188/41303980-1af58b42-6e6f-11e8-88b8-f2c75b04b064.png)
 </p>
+
 ## Vsebina
 * [Uporaba](#uporaba)
 * [Funkcionalnosti](#funkcionalnosti)
