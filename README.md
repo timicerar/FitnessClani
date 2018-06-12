@@ -11,6 +11,13 @@ Ekipo sestavljajo [Cerar Timotej](https://github.com/timicerar), [Ribič Jože](
 
 ![35102779_1679849898777500_2632340843893096448_n](https://user-images.githubusercontent.com/23579188/41303784-8d5cf108-6e6e-11e8-928b-f2955735aecf.png)
 
+![35148105_1679850955444061_236271214719401984_n](https://user-images.githubusercontent.com/23579188/41303924-ee6aa418-6e6e-11e8-8cf5-eed4c0de21ba.png)
+
+![35086715_1679850542110769_4030940903102218240_n](https://user-images.githubusercontent.com/23579188/41303936-f5849dc6-6e6e-11e8-8ebd-ba4973cf9fab.png)
+
+![35227928_1679852258777264_2301934477305184256_n](https://user-images.githubusercontent.com/23579188/41303961-0b926a3a-6e6f-11e8-8065-6a195f5e693f.png)
+
+![35102526_1679852892110534_7375671101751296000_n](https://user-images.githubusercontent.com/23579188/41303980-1af58b42-6e6f-11e8-88b8-f2c75b04b064.png)
 
 ## Vsebina
 * [Uporaba](#uporaba)
