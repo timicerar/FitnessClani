@@ -52,7 +52,8 @@ Za vpostavitev aplikacije si je potrebno namestiti:
 * Pri kloniranju je potrebno ustvariti Maven projekt.
 * Potrebujete strežnik WildFly 12.0.0. Final v katerega je potrebno dodati:
   * JDBC modul za MySQL
-     * Ime sheme za podatkovno bazo naj bo "praktikum_db" 
+    * Ime sheme za podatkovno bazo naj bo "praktikum_db"
+    * Potrebno je dodati datasource za JPA (postopek je spodaj)
   * Uporabnike:
     * Administrativnega uporabnika (user)
     * Aplikacijska uporabnika (trener in receptor)
@@ -75,6 +76,9 @@ Za vpostavitev aplikacije si je potrebno namestiti:
 1. Po uspešnem kloniranju projekta kliknite CTRL + ALT + S kateri vam bo odprl nastavitve. Nato pojdite pod "Plugins" in namestite Lombok Plugin (Intellij boste morali ponovno zagnati).
 ![](https://cdn.discordapp.com/attachments/357945007988015104/456118986145398785/unknown.png)
 
+### Postopek kako dodati Datasource
+1. Kliknite na View --> Tool Windows --> Database --> Kliknite na + in izberite MySQL
+![datasource](https://user-images.githubusercontent.com/34304505/41399322-4d2ca9be-6fba-11e8-87c0-44733c589a89.PNG)
 
 ## ER-Diagram
 ![35098065_1679825912113232_7251615957863366656_n](https://user-images.githubusercontent.com/23579188/41302266-550436da-6e6a-11e8-9641-4a3df249f0e1.png)
