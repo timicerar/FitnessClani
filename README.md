@@ -49,11 +49,11 @@ Aplikacija omogoča:
 Za vpostavitev aplikacije si je potrebno namestiti:
 * Intellij IDEA Ultimate 2018.1.1. (ta verzija je bila uporabljena v času razvoja)
   * V Intelliju si potrebno naložiti vtičnik / plugin za "Lombok Plugin" (anotacije za getterje in setterje)
+  * Potrebno je dodati datasource za JPA (postopek je spodaj)
 * Pri kloniranju je potrebno ustvariti Maven projekt.
 * Potrebujete strežnik WildFly 12.0.0. Final v katerega je potrebno dodati:
   * JDBC modul za MySQL
     * Ime sheme za podatkovno bazo naj bo "praktikum_db"
-    * Potrebno je dodati datasource za JPA (postopek je spodaj)
   * Uporabnike:
     * Administrativnega uporabnika (user)
     * Aplikacijska uporabnika (trener in receptor)
